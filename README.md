@@ -1,4 +1,24 @@
-# ml_Journey
- A web application for logging the learning reports and managing our daily tasks.
+# README
 
- And this is a exercise for me. 
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
