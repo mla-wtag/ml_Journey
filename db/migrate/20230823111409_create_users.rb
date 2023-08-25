@@ -1,5 +1,5 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
-	
+
 	def up 
 		create_table :users, id: false do |t|
 			t.integer :user_id, primary_key: true
@@ -13,9 +13,11 @@ class CreateUsers < ActiveRecord::Migration[7.0]
 			t.string :email
 			t.timestamps
 		end
+
 	end
 
 	def down
 		drop_table :users
 	end
+	
 end

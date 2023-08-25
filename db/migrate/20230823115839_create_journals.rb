@@ -17,4 +17,5 @@ class CreateJournals < ActiveRecord::Migration[7.0]
 	def down
 		drop_table :journals
 	end
+	
 end	
