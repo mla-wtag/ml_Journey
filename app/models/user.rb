@@ -1,4 +1,2 @@
-class User < ApplicationRecord
-	has_many :journals
-	has_many :tasks
+class User < ApplicationRecord 
 end
