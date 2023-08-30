@@ -14,21 +14,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "journals", primary_key: "journal_id", id: :serial, force: :cascade do |t|
+  create_table "journals", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
     t.integer "date"
     t.text "content"
-    t.text "goalstoday"
-    t.text "goalstomorrow"
+    t.text "goals_today"
+    t.text "goals_tomorrow"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
-  create_table "tasks", primary_key: "task_id", id: :serial, force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.integer "user_id"
-    t.string "taskname"
+    t.string "task_name"
     t.text "description"
     t.integer "date"
     t.integer "status"
@@ -37,9 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", primary_key: "user_id", id: :serial, force: :cascade do |t|
-    t.string "firstname", limit: 100, null: false
-    t.string "lastname", limit: 100
+  create_table "users", force: :cascade do |t|
+    t.string "firstname", null: false
+    t.string "lastname"
     t.integer "employee_id"
     t.date "date_of_birth"
     t.date "joining_day"
