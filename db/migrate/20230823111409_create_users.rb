@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
 			t.integer :employee_id
 			t.date :date_of_birth
 			t.date :joining_day
-			t.string :designation, limit: 50
+			t.string :designation
 			t.binary :profile_picture, limit: 10.megabytes
 			t.string :email
 			t.timestamps
