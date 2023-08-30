@@ -11,6 +11,7 @@ class CreateJournals < ActiveRecord::Migration[7.0]
 			t.text :goalstomorrow
 			t.timestamps
 		end
+		
 		add_index :journals, :user_id
 	end
 
