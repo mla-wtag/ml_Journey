@@ -25,8 +25,6 @@ development:
   adapter : postgresql 
   encoding: unicode
   database: journey_development
-  username: michaellavelanet
-  password: 
   host    : localhost
   port:   5432
   #database: ml_Journey_development
