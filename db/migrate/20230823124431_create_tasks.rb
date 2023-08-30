@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
 			t.string :task_name
 			t.text :description
 	    	t.integer :date 
-	    	t.integer :status, limit: 3
+			t.integer :status
 	    	t.timestamps
 		end
 		add_index :tasks , :user_id
