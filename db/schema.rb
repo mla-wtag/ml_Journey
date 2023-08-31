@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
   enable_extension "plpgsql"
 
   create_table "journals", force: :cascade do |t|
-    t.integer "user_id"
     t.string "title"
     t.integer "date"
     t.text "content"
@@ -23,27 +22,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
     t.text "goals_tomorrow"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "user_id"
     t.string "task_name"
     t.text "description"
     t.integer "date"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "firstname", null: false
+    t.string "firstname"
     t.string "lastname"
     t.integer "employee_id"
     t.date "date_of_birth"
     t.date "joining_day"
-    t.string "designation", limit: 50
+    t.string "designation"
     t.binary "profile_picture"
     t.string "email"
     t.datetime "created_at", null: false

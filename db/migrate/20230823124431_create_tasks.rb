@@ -7,7 +7,6 @@ class CreateTasks < ActiveRecord::Migration[7.0]
 			t.integer :status
 	    	t.timestamps
 		end
-		add_index :tasks , :user_id
 	end
 	def down
 		drop_table :tasks
