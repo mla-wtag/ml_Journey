@@ -10,6 +10,6 @@ class CreateTasks < ActiveRecord::Migration[7.0]
 		add_index :tasks , :user_id
 	end
 	def down
-		drop_table :tasks 
+		drop_table :tasks #tab size commit
 	end
 end
