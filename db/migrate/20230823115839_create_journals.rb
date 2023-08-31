@@ -11,6 +11,6 @@ class CreateJournals < ActiveRecord::Migration[7.0]
 		add_index :journals, :user_id
 	end
 	def down
-		drop_table :journals #tab size commit
+		drop_table :journals
 	end	
 end	
