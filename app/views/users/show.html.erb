@@ -1,0 +1,42 @@
+<h1>Profile</h1>
+<br><br><br><br><br>
+<table>
+    <tr>
+        <th>profile Picture</th>
+    </tr>
+    <tr>
+        <th>firstname</th>
+        <td><%= @user.firstname %></td>
+    </tr>
+
+    <tr>
+        <th>lastname</th>
+        <td><%= @user.lastname %></td>
+    </tr>
+
+    <tr>
+        <th>Birthdate</th>
+        <td><%= @user.date_of_birth %></td>
+    </tr>
+
+    <tr>
+        <th>email</th>
+        <td><%= @user.email %></td>
+    </tr>
+    <tr>
+        <th>designation</th>
+        <td><%= @user.designation %></td>
+    </tr>
+    <tr>
+        <th>employee_id</th>
+        <td><%= @user.employee_id %></td>
+    </tr>
+    <tr>
+        <th>joining day</th>
+        <td><%= @user.joining_day %></td>
+    </tr>
+</table>
+
+
+<%= link_to "Back to America", new_user_path %>
+
