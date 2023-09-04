@@ -14,4 +14,8 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def user_params
+    params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email)
+  end
 end
