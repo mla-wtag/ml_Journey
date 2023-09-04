@@ -46,6 +46,12 @@
   <%= f.text_field :email %><br>
 </div>
 
+<% if @user.user? || @user.admin? %>
+  <div>
+    <%= f.label :role %><br>
+    <%= text_field :role %>
+  </div>
+<% end %>
 <br>
 <br>
 <br>
