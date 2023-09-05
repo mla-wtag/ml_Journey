@@ -1,54 +1,46 @@
-<h1>Profile</h1>
+<h1>Welcome, <%= current_user.firstname %></h1>
+<%= link_to "Log out", new_user_session_path, data: { turbo_method: :delete } %><br>
 <br><br><br>
 <%= link_to "Edit Profile", edit_user_path %>
-
 <br><br><br>
-
 <%= link_to "Delete Profile", user_path(@user), data: {
                                                   turbo_method: :delete,
                                                   turbo_confirm: "Are you sure?",
                                                 } %>
-
 <br><br>
 <table>
     <tr>
-        <th>profile Picture</th>
+      <th>profile Picture</th>
     </tr>
     <tr>
-        <th>firstname</th>
-        <td><%= @user.firstname %></td>
+      <th>firstname</th>
+      <td><%= @user.firstname %></td>
     </tr>
 
     <tr>
-        <th>lastname</th>
-        <td><%= @user.lastname %></td>
+      <th>lastname</th>
+      <td><%= @user.lastname %></td>
     </tr>
 
     <tr>
-        <th>Birthdate</th>
-        <td><%= @user.date_of_birth %></td>
+      <th>Birthdate</th>
+      <td><%= @user.date_of_birth %></td>
     </tr>
 
     <tr>
-        <th>email</th>
-        <td><%= @user.email %></td>
+      <th>email</th>
+      <td><%= @user.email %></td>
     </tr>
     <tr>
-        <th>designation</th>
-        <td><%= @user.designation %></td>
+      <th>designation</th>
+      <td><%= @user.designation %></td>
     </tr>
     <tr>
-        <th>employee_id</th>
-        <td><%= @user.employee_id %></td>
+      <th>employee_id</th>
+      <td><%= @user.employee_id %></td>
     </tr>
     <tr>
-        <th>joining day</th>
-        <td><%= @user.joining_day %></td>
+      <th>joining day</th>
+      <td><%= @user.joining_day %></td>
     </tr>
-
-
-
 </table>
-
-
-<%= link_to "Back to America", new_user_path %>

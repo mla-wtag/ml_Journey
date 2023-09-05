@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-  # before_filter :authentifcate_user!
-  # before_filter :admin_only, except => :show
-
   def index
+    @users = User.all
   end
 
   def new
@@ -38,17 +36,11 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     redirect_to root_path, status: :see_other
   end
 
   private
 
-  # def admin_only
-  #   unless current_user.admin?
-  #     redirect_to :back, :alert => "Access denied."
-  #   end
-  # end
   def user_params
     params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email, :password, :password_confirmation)
   end
