@@ -2,11 +2,11 @@
 <%= form_with model: @user, url: user_sessions_path do |f| %>
   <div>
     <%= f.label :firstname %><br>
-    <%= f.text_field :firstname, placeholder: "Firstname" %>
+    <%= f.text_field :firstname, placeholder: "e.g. Kevin  " %>
   </div>
   <div>
     <%= f.label :password %><br>
-    <%= f.text_field :password, placeholder: "Password" %>
+    <%= f.text_field :password, placeholder: "e.g. laks`?ü!324345ajlf" %>
   </div>
   <p>
     <%= f.submit "Login" %>
