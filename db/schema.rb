@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
     t.string "designation"
     t.binary "profile_picture"
     t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

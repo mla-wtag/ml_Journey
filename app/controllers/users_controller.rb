@@ -49,8 +49,7 @@ class UsersController < ApplicationController
   #     redirect_to :back, :alert => "Access denied."
   #   end
   # end
-
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email, :role)
+    params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email, :password, :password_confirmation)
   end
 end
