@@ -21,11 +21,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
       redirect_to @user
     else
@@ -43,5 +43,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email, :password, :password_confirmation)
+  end
+
+  def current_user
+    @current_user ||= User.find(params[:id])
+  end
+
+  def authenticate_user
+    unless current_user == current_session_user
+      redirect_to root_path, alert: "You are not authorized to perform this action."
+    end
   end
 end
