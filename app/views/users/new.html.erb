@@ -3,26 +3,56 @@
   <div>
     <%= f.label :firstname %><br>
     <%= f.text_field :firstname %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :employee_id %><br>
     <%= f.text_field :employee_id %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :date_of_birth %><br>
     <%= f.date_field :date_of_birth %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :joining_day %><br>
     <%= f.date_field :joining_day %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :designation %><br>
     <%= f.text_field :designation %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :profile_picture %><br>
@@ -31,19 +61,34 @@
   <div>
     <%= f.label :email %><br>
     <%= f.text_field :email %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.text_field :password %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
   <div>
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.text_field :password_confirmation %><br>
+    <% if @user.errors[:firstname].any? %>
+      <div class="validation-error">
+        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+      </div><br>
+    <% end %>
   </div>
-<br>
-<br>
-<br>
-  <div> 
+  <br>
+  <br>
+  <br>
+  <div>
     <%= f.submit "Register" %> 
   </div>
 <% end %>
