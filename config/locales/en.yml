@@ -17,10 +17,11 @@ en:
   journal: 'Log Journal'
   task:   'Tasks'
   members: 'Team Members'
+  back: 'Back'
 
   buttons:
   log_out: 'Log Out'
   create_user: 'Create Profile'
   register: 'Register'
   edit: 'Edit Profile'
-  delete: 'delete'
+  delete: 'Delete'

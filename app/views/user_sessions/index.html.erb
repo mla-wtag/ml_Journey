@@ -1,0 +1,19 @@
+<h1><%= t('members') %></h1>
+<%= link_to t('login'), new_user_session_path %>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('firstname') %></th>
+      <th><%= t('lastname') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.each do |user| %>
+      <tr>
+        <td><%= user.firstname %></td>
+        <br>
+        <td><%= user.lastname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

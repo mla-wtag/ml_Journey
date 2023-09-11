@@ -1,15 +1,15 @@
 <h1><%= t('login') %></h1>
 <%= form_with model: @user, url: user_sessions_path do |f| %>
   <div>
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname, placeholder: 'e.g. Kevin  ' %>
+    <%= f.label t('firstname') %><br>
+    <%= f.text_field :firstname %>
   </div>
   <div>
-    <%= f.label :password %><br>
-    <%= f.text_field :password, placeholder: 'e.g. laks`?ü!324345ajlf' %>
+    <%= f.label t('password') %><br>
+    <%= f.text_field :password %>
   </div>
   <p>
-    <%= f.submit 'Login' %>
+    <%= f.submit t('login') %>
   </p>
 <% end %>
-<%= link_to 'Register', new_user_path %>
+<%= link_to t('register'), new_user_path %>

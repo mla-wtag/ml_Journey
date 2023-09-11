@@ -1,12 +1,12 @@
 <h1>Welcome, <%= current_user.firstname %></h1>
-<%= link_to 'Log out', new_user_session_path, data: { turbo_method: :delete } %>
+<%= link_to t('log_out'), new_user_session_path, data: { turbo_method: :delete } %>
 <br><br><br>
-<%= link_to 'Edit Profile', edit_user_path %>
+<%= link_to t('edit'), edit_user_path %>
 <br><br><br>
-<%= link_to 'Delete Profile', user_path(@user), data: {
-                                                  turbo_method: :delete,
-                                                  turbo_confirm: 'Are you sure?',
-                                                } %>
+<%= link_to t('delete'), user_path(@user), data: {
+                                             turbo_method: :delete,
+                                             turbo_confirm: 'Are you sure?',
+                                           } %>
 <br><br>
 <table>
     <tr>

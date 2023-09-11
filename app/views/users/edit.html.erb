@@ -1,67 +1,50 @@
-<%= link_to 'Back to Profile', user_path(@user) %>
+<%= link_to t('back'), user_path(@user) %>
 <h1>Edit Profile</h1>
 <%= form_with model: @user do |f| %>
   <div>
-    <%= f.label :firstname %><br>
+    <%= f.label t('firstname') %><br>
     <%= f.text_field :firstname %><br>
   </div>
-
-
   <div>
-    <%= f.label :lastname %><br>
+    <%= f.label t('lastname') %><br>
     <%= f.text_field :lastname %><br>
   </div>
-
-
   <div>
-    <%= f.label :employee_id %><br>
+    <%= f.label t('Employee') %><br>
     <%= f.text_field :employee_id %><br>
   </div>
-
-
   <div>
-    <%= f.label :date_of_birth %><br>
+    <%= f.label t('date_of_birth') %><br>
     <%= f.date_field :date_of_birth %><br>
   </div>
-
-
   <div>
-    <%= f.label :joining_day %><br>
+    <%= f.label t('joining_day') %><br>
     <%= f.date_field :joining_day %><br>
   </div>
-
   <div>
-    <%= f.label :designation %><br>
+    <%= f.label t('Designation') %><br>
     <%= f.text_field :designation %><br>
   </div>
-
   <div>
-    <%= f.label :profile_picture %><br>
+    <%= f.label t('profile_picture') %><br>
     <%= f.text_field :profile_picture %><br>
   </div>
-
   <div>
-    <%= f.label :email %><br>
+    <%= f.label t('Email') %><br>
     <%= f.text_field :email %><br>
   </div>
-
   <div>
-    <%= f.label :password %><br>
+    <%= f.label t('password') %><br>
     <%= f.text_field :password, placeholder: 'current or new code' %><br>
   </div>
-
   <div>
-    <%= f.label :password_confirmation %><br>
+    <%= f.label t('password_confirmation') %><br>
     <%= f.text_field :password_confirmation, placeholder: 'repeat the code' %><br>
   </div>
-
-
 <br>
 <br>
 <br>
 <div> 
-  <%= f.submit 'edit profile' %> 
+<%= f.submit 'edit profile' %> 
 </div>
 <% end %>
-
-
