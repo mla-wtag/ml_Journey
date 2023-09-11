@@ -1,4 +1,4 @@
-<%= link_to "Back to Profile", user_path(@user) %>
+<%= link_to 'Back to Profile', user_path(@user) %>
 <h1>Edit Profile</h1>
 <%= form_with model: @user do |f| %>
   <div>
@@ -47,12 +47,12 @@
 
   <div>
     <%= f.label :password %><br>
-    <%= f.text_field :password, placeholder: "current or new code" %><br>
+    <%= f.text_field :password, placeholder: 'current or new code' %><br>
   </div>
 
   <div>
     <%= f.label :password_confirmation %><br>
-    <%= f.text_field :password_confirmation, placeholder: "repeat the code" %><br>
+    <%= f.text_field :password_confirmation, placeholder: 'repeat the code' %><br>
   </div>
 
 
@@ -60,7 +60,7 @@
 <br>
 <br>
 <div> 
-  <%= f.submit "edit profile" %> 
+  <%= f.submit 'edit profile' %> 
 </div>
 <% end %>
 

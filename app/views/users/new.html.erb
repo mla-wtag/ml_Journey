@@ -1,4 +1,4 @@
-<%= link_to "Back to Login", root_path %>
+<%= link_to 'Back to Login', root_path %>
 <h1>Create User</h1>
 <%= form_with model: @user do |f| %>
   <div>
@@ -6,7 +6,7 @@
     <%= f.text_field :firstname %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
     <%= f.text_field :lastname %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -24,7 +24,7 @@
     <%= f.text_field :employee_id %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -33,7 +33,7 @@
     <%= f.date_field :date_of_birth %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -42,7 +42,7 @@
     <%= f.date_field :joining_day %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -51,7 +51,7 @@
     <%= f.text_field :designation %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -64,7 +64,7 @@
     <%= f.text_field :email %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -73,7 +73,7 @@
     <%= f.text_field :password %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -82,7 +82,7 @@
     <%= f.text_field :password_confirmation %><br>
     <% if @user.errors[:firstname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(", ") %>
+        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -90,6 +90,6 @@
   <br>
   <br>
   <div>
-    <%= f.submit "Register" %> 
+    <%= f.submit 'Register' %> 
   </div>
 <% end %>

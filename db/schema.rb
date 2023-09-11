@@ -12,39 +12,38 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_23_124431) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "journals", force: :cascade do |t|
-    t.string "title"
-    t.integer "date"
-    t.text "content"
-    t.text "goals_today"
-    t.text "goals_tomorrow"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'journals', force: :cascade do |t|
+    t.string 'title'
+    t.integer 'date'
+    t.text 'content'
+    t.text 'goals_today'
+    t.text 'goals_tomorrow'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "task_name"
-    t.text "description"
-    t.integer "date"
-    t.integer "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'tasks', force: :cascade do |t|
+    t.string 'task_name'
+    t.text 'description'
+    t.integer 'date'
+    t.integer 'status'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.integer "employee_id"
-    t.date "date_of_birth"
-    t.date "joining_day"
-    t.string "designation"
-    t.binary "profile_picture"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'firstname'
+    t.string 'lastname'
+    t.integer 'employee_id'
+    t.date 'date_of_birth'
+    t.date 'joining_day'
+    t.string 'designation'
+    t.binary 'profile_picture'
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
