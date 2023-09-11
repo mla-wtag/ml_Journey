@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
   def authenticate_user
     unless current_user == current_session_user
-      redirect_to root_path, alert: 'You are not authorized to perform this action.'
+      redirect_to root_path
     end
   end
 end
