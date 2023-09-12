@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'user_sessions#index'
-  resources :user_sessions, only: [:index, :new, :create, :destroy]
+  root 'user_sessions#new'
+  resources :user_sessions, only: [:new, :create, :destroy]
   resources :users
   resources :users do
     member do

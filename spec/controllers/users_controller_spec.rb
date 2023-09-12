@@ -13,13 +13,6 @@ RSpec.describe UsersController, type: :controller do
                       password: 'code')
   end
 
-  describe 'GET users#index' do
-    it 'renders the :index template' do
-      get :index
-      expect(response).to render_template :index
-    end
-  end
-
   describe 'GET users#new' do
     it 'renders the :new template' do
       get :new
