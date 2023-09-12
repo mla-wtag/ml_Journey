@@ -1,5 +1,5 @@
 <%= link_to t('back'), user_path(@user) %>
-<h1>Edit Profile</h1>
+<h1><%= t('edit') %></h1>
 <%= form_with model: @user do |f| %>
   <div>
     <%= f.label t('firstname') %><br>
