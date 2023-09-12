@@ -2,7 +2,7 @@ en:
   attributes: 
   firstname: 'Firstname'
   lastname: 'Lastname'
-  Employee: 'Employee'
+  Employee: 'Employee ID'
   date_of_birth: 'Date of birth'
   joining_day: 'Joining Day'
   Designation: 'Designation'
