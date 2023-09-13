@@ -18,10 +18,13 @@ gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'ffaker', '~> 2.22'
   gem 'i18n', '~> 1.14', '>= 1.14.1'
+  gem 'i18n-tasks', '~> 1.0', '>= 1.0.12'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rufo', '~> 0.16.2'
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'shoulda-matchers', '~> 5.3'
 end
 
 group :development do

@@ -1,5 +1,9 @@
 require 'rails_helper'
+
 RSpec.describe UserSessionsController, type: :controller do
+  let(:valid_user) { FactoryBot.create(:user, firstname: 'Michael', password: 'code') }
+  let(:invalid_user) { FactoryBot.create(:user) } # Creates a user with random data
+
   describe 'GET user_sessions#new' do
     it 'renders the :new template' do
       get :new
@@ -9,29 +13,14 @@ RSpec.describe UserSessionsController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid user credentials' do
-      let!(:session_user) do
-        FactoryBot.create(:user,
-                          id: 1,
-                          firstname: 'Michael',
-                          lastname: 'Lavelanet',
-                          employee_id: '1234',
-                          date_of_birth: '2004-12-12',
-                          joining_day: '2004-12-12',
-                          designation: 'Junior Software Engineer',
-                          email: 'Mail',
-                          password: 'code')
-      end
-
       it 'sets the session user_id' do
-        post :create, params: { user: { firstname: 'Michael', password: 'code' } }
-        session_user.reload
-        expect(session[:user_id]).to eq(session_user.id)
+        post :create, params: { user: { firstname: valid_user.firstname, password: 'code' } }
+        expect(session[:user_id]).to eq(valid_user.id)
       end
 
       it 'redirects to the user show page' do
-        post :create, params: { user: { firstname: 'Michael', password: 'code' } }
-        session_user.reload
-        expect(response).to redirect_to(user_path(session_user))
+        post :create, params: { user: { firstname: valid_user.firstname, password: 'code' } }
+        expect(response).to redirect_to(user_path(valid_user))
       end
     end
 
