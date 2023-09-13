@@ -1,28 +1,42 @@
-en:  
-  attributes: 
-  firstname: 'Firstname'
-  lastname: 'Lastname'
-  Employee: 'Employee ID'
-  date_of_birth: 'Date of birth'
-  joining_day: 'Joining Day'
-  Designation: 'Designation'
-  profile_picture: 'Profile Picture'
-  Email: 'Email'
-  password: 'Password'
-  password_confirmation: 'Password confirmation'
-
-  views:
-  login: 'Login'
-  profile: 'Profile'
-  journal: 'Log Journal'
-  task:   'Tasks'
-  members: 'Team Members'
-  back: 'Back'
-
+---
+en:
+  attributes:
+    firstname: Firstname
+    lastname: Lastname
+    employee_id: Employee ID
+    date_of_birth: Date of birth
+    joining_day: Joining Day
+    designation: Designation
+    profile_picture: Profile Picture
+    email: Email
+    password: Password
+    password_confirmation: Password confirmation
   buttons:
-  log_out: 'Log Out'
-  create_user: 'Create Profile'
-  register: 'Register'
-  edit: 'Edit Profile'
-  delete: 'Delete'
-  
+    register: Register
+    create_user: Create Profile
+    edit: Edit Profile
+    delete: Delete
+    log_out: Log Out
+  views:
+    journal: Log Journal
+    login: Login
+    members: Team Members
+    profile: Profile
+    task: Tasks
+  activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+    attributes:
+      user:
+        firstname: Firstname
+        lastname: Lastname
+        Employee: Employee ID
+        date_of_birth: Date of birth
+        joining_day: Joining Day
+        Designation: Designation
+        profile_picture: Profile Picture
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation

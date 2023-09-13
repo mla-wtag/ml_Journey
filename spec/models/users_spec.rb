@@ -14,6 +14,14 @@ RSpec.describe User, type: :model do
     should validate_presence_of(:joining_day)
     should validate_presence_of(:designation)
     should validate_presence_of(:password)
+    should validate_presence_of(:email)
+  end
+
+  it 'validates format of email' do
+    should allow_value('user@example.com').for(:email)
+    should_not allow_value('invalid-email').for(:email)
+    should_not allow_value('user@').for(:email)
+    should_not allow_value('@example.com').for(:email)
   end
 
   it 'checks that a User with specific attributes is not valid' do
