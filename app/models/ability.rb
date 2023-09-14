@@ -4,6 +4,6 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    can [:create, :read, :update, :destroy], User
+    can %i(create read update destroy), User
   end
 end

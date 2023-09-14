@@ -22,7 +22,7 @@ en:
     login: Login
     members: Team Members
     profile: Profile
-    welcome: Welcome,
+    welcome: Welcome, %{name}
     task: Tasks
   confirmations:
     delete_user: Are you sure?
