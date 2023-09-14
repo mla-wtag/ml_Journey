@@ -13,45 +13,45 @@
   <div>
     <%= f.label t('attributes.lastname') %><br>
     <%= f.text_field :lastname %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:lastname].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:lastname).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.employee_id') %><br>
     <%= f.text_field :employee_id %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:employee_id].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:employee_id).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.date_of_birth') %><br>
     <%= f.date_field :date_of_birth %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:date_of_birth].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:date_of_birth).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.joining_day') %><br>
     <%= f.date_field :joining_day %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:joining_day].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:joining_day).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.designation') %><br>
     <%= f.text_field :designation %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:designation].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:designation).join(', ') %>
       </div><br>
     <% end %>
   </div>
@@ -62,27 +62,27 @@
   <div>
     <%= f.label t('attributes.email') %><br>
     <%= f.text_field :email %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:email].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:email).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.password') %><br>
     <%= f.text_field :password %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:password].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:password).join(', ') %>
       </div><br>
     <% end %>
   </div>
   <div>
     <%= f.label t('attributes.password_confirmation') %><br>
     <%= f.text_field :password_confirmation %><br>
-    <% if @user.errors[:firstname].any? %>
+    <% if @user.errors[:password_confirmation].any? %>
       <div class="validation-error">
-        <%= @user.errors.full_messages_for(:firstname).join(', ') %>
+        <%= @user.errors.full_messages_for(:password_confirmation).join(', ') %>
       </div><br>
     <% end %>
   </div>

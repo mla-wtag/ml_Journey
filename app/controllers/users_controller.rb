@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
-  def new
-  end
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -11,12 +8,6 @@ class UsersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   def update
