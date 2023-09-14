@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
+
   def new
-    @user = User.new
   end
 
   def create
@@ -13,11 +14,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
   end
 
   def update
@@ -30,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path, status: :see_other
   end
@@ -39,10 +37,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:firstname, :lastname, :employee_id, :date_of_birth, :joining_day, :designation, :profile_picture, :email, :password, :password_confirmation)
-  end
-
-  def current_user
-    @current_user ||= User.find(params[:id])
   end
 
   def authenticate_user

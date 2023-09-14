@@ -22,7 +22,10 @@ en:
     login: Login
     members: Team Members
     profile: Profile
+    welcome: Welcome,
     task: Tasks
+  confirmations:
+    delete_user: Are you sure?
   activerecord:
     models:
       user:
@@ -32,10 +35,10 @@ en:
       user:
         firstname: Firstname
         lastname: Lastname
-        Employee: Employee ID
+        employee_id: Employee ID
         date_of_birth: Date of birth
         joining_day: Joining Day
-        Designation: Designation
+        designation: Designation
         profile_picture: Profile Picture
         email: Email
         password: Password
