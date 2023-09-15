@@ -1,0 +1,43 @@
+<h1><%= t('views.welcome', name: current_user.firstname) %></h1>
+<%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
+<br><br><br>
+<%= link_to t('buttons.edit'), edit_user_path %>
+<br><br><br>
+<%= link_to t('buttons.delete'), user_path(@user), data: {
+                                                     turbo_method: :delete,
+                                                     turbo_confirm: t('confirmations.delete_user'),
+                                                   } %>
+<br><br>
+<table>
+    <tr>
+      <th><%= t('attributes.profile_picture') %></th>
+    </tr>
+    <tr>
+      <th><%= t('attributes.firstname') %></th>
+      <td><%= @user.firstname %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.lastname') %></th>
+      <td><%= @user.lastname %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.employee_id') %></th>
+      <td><%= @user.date_of_birth %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.date_of_birth') %></th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.joining_day') %></th>
+      <td><%= @user.designation %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.designation') %></th>
+      <td><%= @user.employee_id %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.email') %></th>
+      <td><%= @user.joining_day %></td>
+    </tr>
+</table>

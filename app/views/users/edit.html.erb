@@ -1,0 +1,48 @@
+<%= link_to t('buttons.back'), user_path(@user) %>
+<h1><%= t('views.edit') %></h1>
+
+<%= form_with model: @user do |f| %>
+  <div>
+    <%= f.label t('attributes.firstname') %><br>
+    <%= f.text_field :firstname %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.lastname') %><br>
+    <%= f.text_field :lastname %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.employee_id') %><br>
+    <%= f.text_field :employee_id %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.date_of_birth') %><br>
+    <%= f.date_field :date_of_birth %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.joining_day') %><br>
+    <%= f.date_field :joining_day %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.designation') %><br>
+    <%= f.text_field :designation %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.profile_picture') %><br>
+    <%= f.text_field :profile_picture %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.email') %><br>
+    <%= f.text_field :email %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.password') %><br>
+    <%= f.password_field :password %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.password_confirmation') %><br>
+    <%= f.password_field :password_confirmation %><br>
+  </div>
+  <div> 
+    <%= f.submit t('buttons.edit') %> 
+  </div>
+<% end %>

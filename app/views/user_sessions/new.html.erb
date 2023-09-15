@@ -1,0 +1,15 @@
+<h1><%= t('views.login') %></h1>
+<%= form_with model: @user, url: user_sessions_path do |f| %>
+  <div>
+    <%= f.label t('attributes.firstname') %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div>
+    <%= f.label t('attributes.password') %><br>
+    <%= f.password_field :password %>
+  </div>
+  <p>
+    <%= f.submit t('views.login') %>
+  </p>
+<% end %>
+<%= link_to t('buttons.register'), new_user_path %>
