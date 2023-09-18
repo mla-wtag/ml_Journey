@@ -24,6 +24,8 @@ en:
     profile: Profile
     welcome: 'Welcome, %{name}'
     task: Tasks
+    optional_password_change_note: Leave the password fields blank if you don't want to change your password.
+    login_validation: This login is invalid
   confirmations:
     delete_user: Are you sure?
   validations: 

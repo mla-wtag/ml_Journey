@@ -9,6 +9,7 @@ class UserSessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
+      flash[:alert] = t('views.login_validation')
       redirect_to root_path
     end
   end

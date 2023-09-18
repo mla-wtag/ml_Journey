@@ -1,12 +1,21 @@
 <h1><%= t('views.login') %></h1>
+
+<% if flash[:alert] %>
+  <div class="alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
 <%= form_with model: @user, url: user_sessions_path do |f| %>
-  <div>
-    <%= f.label t('attributes.firstname') %><br>
-    <%= f.text_field :firstname %>
+    <div>
+    <%= f.label t('attributes.firstname') %> 
+    <br>
+    <%= f.text_field :firstname %><br>
   </div>
   <div>
-    <%= f.label t('attributes.password') %><br>
-    <%= f.password_field :password %>
+    <%= f.label t('attributes.password') %> 
+    <br>
+    <%= f.password_field :password %><br>
   </div>
   <p>
     <%= f.submit t('views.login') %>

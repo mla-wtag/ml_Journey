@@ -34,14 +34,21 @@
     <%= f.label t('attributes.email') %><br>
     <%= f.text_field :email %><br>
   </div>
-  <div>
-    <%= f.label t('attributes.password') %><br>
-    <%= f.password_field :password %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.password_confirmation') %><br>
-    <%= f.password_field :password_confirmation %><br>
-  </div>
+<div>
+  <p><%= t('views.optional_password_change_note') %></p>
+  <%= f.label t('attributes.password') %><br>
+  <%= f.password_field :password %><br>
+</div>
+<div>
+  <%= f.label t('attributes.password_confirmation') %> 
+  <% if @user.errors[:password_confirmation].any? %>
+    <span class="validation-error">
+      <%= @user.errors[:password_confirmation].join(', ') %> 
+    </span>
+  <% end %>
+  <br>
+  <%= f.password_field :password_confirmation %><br>
+</div>
   <div> 
     <%= f.submit t('buttons.edit') %> 
   </div>
