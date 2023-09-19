@@ -1,4 +1,4 @@
-class AlterUsers2 < ActiveRecord::Migration[7.0]
+class AlterUsersTable < ActiveRecord::Migration[7.0]
   def up
     remove_column :users, :profile_picture
     add_column :users, :role, :integer, default: 0
