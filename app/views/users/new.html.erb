@@ -62,14 +62,14 @@
     <%= f.text_field :designation %><br>
   </div>
   <div>
-    <%= f.label t('attributes.profile_picture') %> 
-    <% if @user.errors[:profile_picture].any? %>
+    <%= f.label t('attributes.profile_photo') %> 
+    <% if @user.errors[:profile_photo].any? %>
       <span class="validation-error">
-        <%= @user.errors[:profile_picture].join(', ') %> 
+        <%= @user.errors[:profile_photo].join(', ') %> 
       </span>
     <% end %>
     <br>
-    <%= f.text_field :profile_picture %><br>
+    <%= f.file_field :profile_photo %><br>
   </div>
   <div>
     <%= f.label t('attributes.email') %> 
@@ -80,6 +80,21 @@
     <% end %>
     <br>
     <%= f.text_field :email %><br>
+  </div>
+  <div>
+  <%= f.label t('views.role') %>
+  <br>
+  <%= f.radio_button :role, 'user' %>
+  <%= f.label :role_user, t('attributes.user') %>
+  <br>
+  <%= f.radio_button :role, 'admin' %>
+  <%= f.label :role_admin, t('attributes.admin') %>
+  <% if @user.errors[:role].any? %>
+    <span class="validation-error">
+      <%= @user.errors[:role].join(', ') %> 
+    </span>
+  <% end %>
+  <br>
   </div>
   <div>
     <%= f.label t('attributes.password') %> 

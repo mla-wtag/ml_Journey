@@ -10,7 +10,10 @@
 <br><br>
 <table>
     <tr>
-      <th><%= t('attributes.profile_picture') %></th>
+      <th><%= t('attributes.profile_photo') %></th>
+      <% if @user.profile_photo.attached? %>
+       <%= image_tag(@user.image_resize) %>
+      <% end %>
     </tr>
     <tr>
       <th><%= t('attributes.firstname') %></th>
@@ -39,5 +42,9 @@
     <tr>
       <th><%= t('attributes.email') %></th>
       <td><%= @user.joining_day %></td>
+    </tr>
+    <tr>
+      <th><%= t('attributes.role') %></th>
+      <td><%= @user.role %></td>
     </tr>
 </table>

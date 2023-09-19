@@ -7,8 +7,10 @@ en:
     date_of_birth: Date of birth
     joining_day: Joining Day
     designation: Designation
-    profile_picture: Profile Picture
+    profile_photo: Profile Photo 
     email: Email
+    role_user: user
+    role_admin: admin
     password: Password
     password_confirmation: Password confirmation
   buttons:
@@ -24,6 +26,7 @@ en:
     profile: Profile
     welcome: 'Welcome, %{name}'
     task: Tasks
+    role: Role
     optional_password_change_note: Leave the password fields blank if you don't want to change your password.
     login_validation: This login is invalid
   confirmations:
@@ -44,7 +47,7 @@ en:
         date_of_birth: Date of birth
         joining_day: Joining Day
         designation: Designation
-        profile_picture: Profile Picture
+        profile_photo: Profile Photo
         email: Email
         password: Password
         password_confirmation: Password confirmation
