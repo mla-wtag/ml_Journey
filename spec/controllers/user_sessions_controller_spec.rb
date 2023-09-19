@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UserSessionsController, type: :controller do
   let(:valid_user) { FactoryBot.create(:user, firstname: 'Michael', password: 'code') }
-  let(:invalid_user) { FactoryBot.create(:user) } # Creates a user with random data
-
+  let(:invalid_user) { FactoryBot.create(:user) }
   describe 'GET user_sessions#new' do
     it 'renders the :new template' do
       get :new
