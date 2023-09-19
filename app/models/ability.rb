@@ -3,11 +3,8 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user.admin?
-      admin_abilities
-    else
-      user_abilities
-    end
+    return unless user
+    can :manage, User
   end
 
   private
