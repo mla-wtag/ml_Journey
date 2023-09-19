@@ -15,6 +15,12 @@ RSpec.describe User, type: :model do
     should validate_presence_of(:designation)
     should validate_presence_of(:password)
     should validate_presence_of(:email)
+    should validate_presence_of(:profile_photo)
+    should validate_presence_of(:role)
+  end
+
+  it 'validates the role enum' do
+    should define_enum_for(:role).with_values(user: 0, admin: 1)
   end
 
   it 'validates format of email' do

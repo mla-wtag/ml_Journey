@@ -7,6 +7,8 @@ FactoryBot.define do
     joining_day { FFaker::Time.between(10.years.ago, Date.today).to_date }
     designation { FFaker::Job.title }
     email { FFaker::Internet.email }
+    profile_photo { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test.jpeg'), 'image/jpeg') }
+    role { %w[user admin].sample }
     password { 'code' }
   end
 end
