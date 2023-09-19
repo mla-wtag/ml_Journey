@@ -1,4 +1,4 @@
-<h1><%= t('views.welcome', name: current_user.firstname) %></h1>
+<h1><%= t('views.welcome', name: current_user.first_name) %></h1>
 <%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
 <br><br><br>
 <%= link_to t('buttons.edit'), edit_user_path %>
@@ -16,12 +16,12 @@
       <% end %>
     </tr>
     <tr>
-      <th><%= t('attributes.firstname') %></th>
-      <td><%= @user.firstname %></td>
+      <th><%= t('attributes.first_name') %></th>
+      <td><%= @user.first_name %></td>
     </tr>
     <tr>
-      <th><%= t('attributes.lastname') %></th>
-      <td><%= @user.lastname %></td>
+      <th><%= t('attributes.last_name') %></th>
+      <td><%= @user.last_name %></td>
     </tr>
     <tr>
       <th><%= t('attributes.employee_id') %></th>

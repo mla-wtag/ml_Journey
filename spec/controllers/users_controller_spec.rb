@@ -33,7 +33,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     context 'with invalid attributes' do
-      let(:invalid_attributes) { { firstname: nil, lastname: nil } }
+      let(:invalid_attributes) { { first_name: nil, last_name: nil } }
 
       it 'does not save new user in database' do
         expect do

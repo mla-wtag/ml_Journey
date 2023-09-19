@@ -2,12 +2,12 @@
 <h1><%= t('views.edit') %></h1>
 <%= form_with model: @user do |f| %>
   <div>
-    <%= f.label t('attributes.firstname') %><br>
-    <%= f.text_field :firstname %><br>
+    <%= f.label t('attributes.first_name') %><br>
+    <%= f.text_field :first_name %><br>
   </div>
   <div>
-    <%= f.label t('attributes.lastname') %><br>
-    <%= f.text_field :lastname %><br>
+    <%= f.label t('attributes.last_name') %><br>
+    <%= f.text_field :last_name %><br>
   </div>
   <div>
     <%= f.label t('attributes.employee_id') %><br>

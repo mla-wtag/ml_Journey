@@ -6,9 +6,9 @@
 <% end %>
 <%= form_with model: @user, url: user_sessions_path do |f| %>
     <div>
-    <%= f.label t('attributes.firstname') %> 
+    <%= f.label t('attributes.first_name') %> 
     <br>
-    <%= f.text_field :firstname %><br>
+    <%= f.text_field :first_name %><br>
   </div>
   <div>
     <%= f.label t('attributes.password') %> 

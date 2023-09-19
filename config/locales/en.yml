@@ -1,8 +1,8 @@
 ---
 en:
   attributes:
-    firstname: Firstname
-    lastname: Lastname
+    first_name: First Name
+    last_name: Last Name
     employee_id: Employee ID
     date_of_birth: Date of birth
     joining_day: Joining Day
@@ -41,8 +41,8 @@ en:
         other: Users
     attributes:
       user:
-        firstname: Firstname
-        lastname: Lastname
+        first_name: First Name
+        last_name: Last Name
         employee_id: Employee ID
         date_of_birth: Date of birth
         joining_day: Joining Day
