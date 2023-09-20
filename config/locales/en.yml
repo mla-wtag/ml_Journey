@@ -34,6 +34,7 @@ en:
   validations: 
     presence: can't be blank
     valid:  must be valid
+    photo: is to large (max. is 15 Megabytes)
   activerecord:
     models:
       user:

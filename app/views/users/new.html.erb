@@ -84,11 +84,11 @@
   <div>
   <%= f.label t('views.role') %>
   <br>
-  <%= f.radio_button :role, 'user' %>
-  <%= f.label :role_user, t('attributes.user') %>
+  <%= f.radio_button :role, 'user_role' %>
+  <%= f.label :user_role, t('attributes.user') %>
   <br>
-  <%= f.radio_button :role, 'admin' %>
-  <%= f.label :role_admin, t('attributes.admin') %>
+  <%= f.radio_button :role, 'admin_role' %>
+  <%= f.label :admin_role, t('attributes.admin') %>
   <% if @user.errors[:role].any? %>
     <span class="validation-error">
       <%= @user.errors[:role].join(', ') %> 
