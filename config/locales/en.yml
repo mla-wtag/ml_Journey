@@ -1,14 +1,16 @@
 ---
 en:
   attributes:
-    firstname: Firstname
-    lastname: Lastname
+    first_name: First Name
+    last_name: Last Name
     employee_id: Employee ID
     date_of_birth: Date of birth
     joining_day: Joining Day
     designation: Designation
-    profile_picture: Profile Picture
+    profile_photo: Profile Photo 
     email: Email
+    role_user: user
+    role_admin: admin
     password: Password
     password_confirmation: Password confirmation
   buttons:
@@ -24,11 +26,15 @@ en:
     profile: Profile
     welcome: 'Welcome, %{name}'
     task: Tasks
+    role: Role
+    optional_password_change_note: Leave the password fields blank if you don't want to change your password.
+    login_validation: This login is invalid
   confirmations:
     delete_user: Are you sure?
   validations: 
     presence: can't be blank
     valid:  must be valid
+    photo: is to large (max. is 15 Megabytes)
   activerecord:
     models:
       user:
@@ -36,13 +42,13 @@ en:
         other: Users
     attributes:
       user:
-        firstname: Firstname
-        lastname: Lastname
+        first_name: First Name
+        last_name: Last Name
         employee_id: Employee ID
         date_of_birth: Date of birth
         joining_day: Joining Day
         designation: Designation
-        profile_picture: Profile Picture
+        profile_photo: Profile Photo
         email: Email
         password: Password
         password_confirmation: Password confirmation

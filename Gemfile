@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.19'
 gem 'bootsnap', require: false
 gem 'cancancan'
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
+gem 'mini_magick', '~> 4.12'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'

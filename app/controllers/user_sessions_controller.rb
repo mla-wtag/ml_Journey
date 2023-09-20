@@ -4,11 +4,12 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(firstname: params[:user][:firstname])
+    @user = User.find_by(email: params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to @user
     else
+      flash[:alert] = t('views.login_validation')
       redirect_to root_path
     end
   end
