@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new
     return unless user
+
     can :manage, User
   end
 
