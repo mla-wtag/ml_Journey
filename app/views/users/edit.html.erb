@@ -2,40 +2,85 @@
 <h1><%= t('views.edit') %></h1>
 <%= form_with model: @user do |f| %>
   <div>
-    <%= f.label t('attributes.first_name') %><br>
+    <%= f.label t('attributes.first_name') %>
+<% if @user.errors[:first_name].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:first_name].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
     <%= f.text_field :first_name %><br>
   </div>
   <div>
-    <%= f.label t('attributes.last_name') %><br>
+    <%= f.label t('attributes.last_name') %>
+    <% if @user.errors[:last_name].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:last_name].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
     <%= f.text_field :last_name %><br>
   </div>
   <div>
     <%= f.label t('attributes.employee_id') %><br>
+     <% if @user.errors[:employee_id].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:employee_id].join(', ') %> 
+      </span>
+    <% end %>
     <%= f.text_field :employee_id %><br>
   </div>
   <div>
-    <%= f.label t('attributes.date_of_birth') %><br>
+    <%= f.label t('attributes.date_of_birth') %>
+    <% if @user.errors[:date_of_birth].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:date_of_birth].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
     <%= f.date_field :date_of_birth %><br>
   </div>
   <div>
     <%= f.label t('attributes.joining_day') %><br>
+     <% if @user.errors[:joining_day].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:joining_day].join(', ') %> 
+      </span>
+    <% end %>
     <%= f.date_field :joining_day %><br>
   </div>
   <div>
-    <%= f.label t('attributes.designation') %><br>
+    <%= f.label t('attributes.designation') %>
+    <% if @user.errors[:designation].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:designation].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
     <%= f.text_field :designation %><br>
   </div>
   <div>
     <%= f.label t('attributes.profile_photo') %><br>
+    <% if @user.errors[:profile_photo].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:profile_photo].join(', ') %> 
+      </span>
+    <% end %>
     <%= f.file_field :profile_photo %><br>
   </div>
   <div>
     <%= f.label t('attributes.email') %><br>
+    <% if @user.errors[:email].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:email].join(', ') %> 
+      </span>
+    <% end %>
     <%= f.text_field :email %><br>
   </div>
 <div>
   <p><%= t('views.optional_password_change_note') %></p>
   <%= f.label t('attributes.password') %><br>
+  
   <%= f.password_field :password %><br>
 </div>
 <div>
