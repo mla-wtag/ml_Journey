@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'validates the role enum' do
-    should define_enum_for(:role).with_values(user: 0, admin: 1)
+    should define_enum_for(:role).with_values(user_role: 0, admin_role: 1)
   end
 
   it 'validates format of email' do
@@ -43,5 +43,20 @@ RSpec.describe User, type: :model do
       password: '',
     )
     expect(user2).not_to be_valid
+  end
+
+  describe 'profile_photo validations' do
+    it 'validates content type of profile_photo' do
+      user = build(:user, profile_photo: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test.txt'), 'text/plain'))
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to include("#{I18n.t('attributes.profile_photo')} #{I18n.t('validations.content_type')}")
+      #expect(user.errors.full_messages).to include('Profile Photo has an invalid content type')
+    end
+  end
+
+  it 'validates size of profile_photo' do
+    user = build(:user, profile_photo: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'large_image.png'), 'image/png'))
+    expect(user).not_to be_valid
+    expect(user.errors.full_messages).to include("#{I18n.t('attributes.profile_photo')} #{I18n.t('validations.photo')}")
   end
 end
