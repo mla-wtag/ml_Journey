@@ -58,4 +58,13 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
     expect(user.errors.full_messages).to include("#{I18n.t('attributes.profile_photo')} #{I18n.t('validations.photo')}")
   end
+
+  it 'validates the content type of profile_photo' do
+    valid_content_types = %w[image/jpg image/jpeg image/png]
+
+    valid_content_types.each do |content_type|
+      user = build(:user, profile_photo: fixture_file_upload('spec/fixtures/test.jpeg', content_type))
+      expect(user).to be_valid, "Expected user to be valid with content_type: #{content_type}, but got errors: #{user.errors.full_messages}"
+    end
+  end
 end
