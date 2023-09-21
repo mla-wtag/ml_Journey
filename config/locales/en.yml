@@ -35,7 +35,7 @@ en:
     presence: can't be blank
     valid:  must be valid
     content_type: has an invalid content type
-    photo: is to large (max. is 5 Megabytes)
+    photo: is too large (max. is 5 Megabytes)
   activerecord:
     models:
       user:

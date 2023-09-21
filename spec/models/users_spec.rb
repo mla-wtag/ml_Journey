@@ -50,7 +50,6 @@ RSpec.describe User, type: :model do
       user = build(:user, profile_photo: Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test.txt'), 'text/plain'))
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to include("#{I18n.t('attributes.profile_photo')} #{I18n.t('validations.content_type')}")
-      #expect(user.errors.full_messages).to include('Profile Photo has an invalid content type')
     end
   end
 
