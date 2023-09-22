@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      TestMailer.index(@user.email).deliver_now
+      redirect_to test_mailer_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,5 +35,8 @@ class UsersController < ApplicationController
     unless current_user == current_session_user
       redirect_to root_path
     end
+  end
+
+  def test_mailer
   end
 end

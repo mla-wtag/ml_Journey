@@ -11,6 +11,7 @@ gem 'mini_magick', '~> 4.12'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'
+gem 'postmark-rails', '~> 0.22.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.7', '>= 7.0.7.2'
 gem 'sprockets-rails'
@@ -32,6 +33,7 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
 end
 
 group :test do
