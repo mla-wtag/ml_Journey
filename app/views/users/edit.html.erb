@@ -60,12 +60,13 @@
     <%= f.text_field :designation %><br>
   </div>
   <div>
-    <%= f.label t('attributes.profile_photo') %><br>
+    <%= f.label t('attributes.profile_photo') %>
     <% if @user.errors[:profile_photo].any? %>
       <span class="validation-error">
         <%= @user.errors[:profile_photo].join(', ') %> 
       </span>
     <% end %>
+    <br>
     <%= f.file_field :profile_photo %><br>
   </div>
   <div>

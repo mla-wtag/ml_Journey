@@ -8,7 +8,7 @@ FactoryBot.define do
     designation { FFaker::Job.title }
     email { FFaker::Internet.email }
     profile_photo { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test.jpeg'), 'image/jpeg') }
-    role { %w[user admin].sample }
+    role { %w[user_role admin_role].sample }
     password { 'code' }
   end
 end
