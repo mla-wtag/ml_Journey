@@ -1,6 +1,4 @@
-class TestMailer < ApplicationMailer
-  default from: 'michael.lavelanet@welldev.io'
-
+class VerificationMailer < ApplicationMailer
   def confirmation_email(user)
     @user = user
     mail(

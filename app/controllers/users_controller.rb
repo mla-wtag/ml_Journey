@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.generate_confirmation_token
     if @user.save
-      TestMailer.confirmation_email(@user).deliver_now
+      VerificationMailer.confirmation_email(@user).deliver_now
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
 
   def confirm_email
     @user = User.find_by(confirmation_token: params[:confirmation_token])
-    if @user&.confirmed_at.nil?
-      @user.update(confirmed_at: Time.current, confirmation_token: nil)
-    else
+    if @user&.confirmed_at.present?
       flash[:alert] = t('validations.confirmation_email')
+    else
+      @user.update(confirmed_at: Time.current, confirmation_token: nil)
     end
     redirect_to root_path
   end

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe TestMailer, type: :mailer do
-  let(:user) { create(:user) } # This will be available for all examples in this describe block
+  let(:user) { create(:user) }
 
-  describe 'does the mail has his header' do
-    let(:mail) { TestMailer.confirmation_email(user) }
+  describe 'test email' do
+    let(:mail) { VerificationMailer.confirmation_email(user) }
 
     it 'renders the headers' do
       expect(mail.subject).to eq('Verification Email')
@@ -18,6 +18,6 @@ RSpec.describe TestMailer, type: :mailer do
   end
 
   it 'enqueues email for delivery' do
-    expect { TestMailer.confirmation_email(user).deliver_now }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    expect { VerificationMailer.confirmation_email(user).deliver_now }.to change { ActionMailer::Base.deliveries.count }.by(1)
   end
 end
