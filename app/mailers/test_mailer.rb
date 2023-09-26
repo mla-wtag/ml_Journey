@@ -1,13 +1,12 @@
 class TestMailer < ApplicationMailer
   default from: 'michael.lavelanet@welldev.io'
 
-  def index(user_email)
+  def confirmation_email(user)
+    @user = user
     mail(
-      subject: 'Email confirmation',
-      to: 'michael.lavelanet@welldev.io',
+      subject: I18n.t('mailer.subject'),
+      to: @user.email,
       from: 'michael.lavelanet@welldev.io',
-      track_opens: 'true',
-      message_stream: 'broadcast',
     )
   end
 end

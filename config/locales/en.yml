@@ -28,7 +28,6 @@ en:
     task: Tasks
     role: Role
     optional_password_change_note: Leave the password fields blank if you don't want to change your password.
-    login_validation: This login is invalid
   confirmations:
     delete_user: Are you sure?
   validations: 
@@ -36,6 +35,12 @@ en:
     valid:  must be valid
     content_type: has an invalid content type
     photo: is too large (max. is 5 Megabytes)
+    login_invalid_validation: This login is invalid
+    login_invalid_confirmation: You need to verify your email account
+    confirmation_email: Invalid confirmation token or email already confirmed
+  mailer:
+    subject: Verification Email
+    confirmation_button: Verify your Email
   activerecord:
     models:
       user:

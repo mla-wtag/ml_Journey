@@ -67,4 +67,32 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid, "Expected user to be valid with content_type: #{content_type}, but got errors: #{user.errors.full_messages}"
     end
   end
+
+  describe '#generate_confirmation_token' do
+    let(:user) { FactoryBot.create(:user, confirmation_token: nil) }
+
+    it 'generates a confirmation token' do
+      user.generate_confirmation_token
+      expect(user.confirmation_token).not_to be_nil
+    end
+
+    it 'generates a unique confirmation token each time it is called' do
+      original_token = user.generate_confirmation_token
+      new_token = user.generate_confirmation_token
+      expect(original_token).not_to eq(new_token)
+    end
+  end
+
+  describe '#confirmed?' do
+    let(:unconfirmed_user) { FactoryBot.create(:user, confirmed_at: nil) }
+    let(:confirmed_user) { FactoryBot.create(:user, confirmed_at: Time.current) }
+
+    it 'returns false for unconfirmed user' do
+      expect(unconfirmed_user.confirmed?).to be_falsey
+    end
+
+    it 'returns true for confirmed user' do
+      expect(confirmed_user.confirmed?).to be_truthy
+    end
+  end
 end

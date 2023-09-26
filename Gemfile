@@ -25,6 +25,7 @@ group :development, :test do
   gem 'ffaker', '~> 2.22'
   gem 'i18n', '~> 1.14', '>= 1.14.1'
   gem 'i18n-tasks', '~> 1.0', '>= 1.0.12'
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rufo', '~> 0.16.2'
   gem 'rspec-rails', '~> 6.0.0'
@@ -33,7 +34,6 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
 end
 
 group :test do
