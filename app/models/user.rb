@@ -11,4 +11,12 @@ class User < ApplicationRecord
   def image_resize
     profile_photo.variant(resize_to_limit: [200, 200]).processed
   end
+
+  def generate_confirmation_token
+    self.confirmation_token = SecureRandom.urlsafe_base64(24)
+  end
+
+  def confirmed?
+    confirmed_at.present?
+  end
 end

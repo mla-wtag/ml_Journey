@@ -68,4 +68,20 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(root_path)
     end
   end
+
+  describe 'GET #confirm_email' do
+    context 'when the user is already confirmed' do
+      let(:user) { create(:user, confirmed_at: Time.current, confirmation_token: 'some_token') }
+
+      it 'sets the flash alert' do
+        get :confirm_email, params: { id: user.id, confirmation_token: user.confirmation_token }
+        expect(flash[:alert]).to eq(I18n.t('validations.confirmation_email'))
+      end
+
+      it 'redirects to the root path' do
+        get :confirm_email, params: { id: user.id, confirmation_token: user.confirmation_token }
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
 end
