@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TestMailer, type: :mailer do
+RSpec.describe VerificationMailer, type: :mailer do
   let(:user) { create(:user) }
 
   describe 'test email' do
