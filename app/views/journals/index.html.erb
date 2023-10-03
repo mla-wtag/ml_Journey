@@ -18,10 +18,10 @@
         <td></td>
         <td><%= link_to t('views.view_journal'), user_journal_path(@user, journal) %></td>
         <td><%= link_to t('buttons.edit'), edit_user_journal_path(@user, journal) %></td>
-        <td><%= link_to t('buttons.delete'), user_journals_path(@user, journal), data: {
-                                                                                   method: :delete,
-                                                                                   confirm: t('confirmations.delete_journal'),
-                                                                                 } %> </td>
+        <td><%= link_to t('buttons.delete'), user_journal_path(@user, journal), data: {
+                                                                                  turbo_method: :delete,
+                                                                                  turbo_confirm: t('confirmations.delete_journal'),
+                                                                                } %> </td>
       </tr>
     <% end %>
   </tbody>

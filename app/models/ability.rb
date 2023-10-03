@@ -9,7 +9,7 @@ class Ability
         user_abilities
       end
     else
-      can %i(create new confirm_email), User
+      can %i(create new confirm_email), [User, Journal]
     end
   end
 

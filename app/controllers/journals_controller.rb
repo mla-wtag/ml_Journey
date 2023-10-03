@@ -1,19 +1,13 @@
 class JournalsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :user
+  load_and_authorize_resource :journal, through: :user
 
   def index
     @user = current_user
-    @journals = @user.journals
-  end
-
-  def new
-    @user = User.find(params[:user_id]) # Set @user so it's not nil
-    @journal = @user.journals.new
   end
 
   def create
     @user = current_user
-    @journal = @user.journals.new(journal_params)
     if @journal.save
       redirect_to user_journals_path(@user)
     else
@@ -21,14 +15,8 @@ class JournalsController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:user_id])
-    @journal = @user.journals.find(params[:id])
-  end
-
   def update
-    @user = User.find(params[:user_id])
-    @journal = @user.journals.find(params[:id])
+    @user = current_user
     if @journal.update(journal_params)
       redirect_to user_journal_path(@user)
     else
@@ -37,10 +25,9 @@ class JournalsController < ApplicationController
   end
 
   def destroy
-    user = current_user
-    @journal = user.journals.find(params[:id])
+    @user = current_user
     @journal.destroy
-    redirect_to journals_path
+    redirect_to user_journals_path(@user)
   end
 
   private

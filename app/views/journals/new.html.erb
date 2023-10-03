@@ -1,6 +1,6 @@
-<%= link_to t('buttons.back'), user_journals_path %>
+<%= link_to t('buttons.profile'), user_journals_path(@user) %> 
 <h1><%= t('views.journal') %></h1>
-<%= form_with model: [@user, @journal], url: user_journals_path(@user) do |f| %>
+<%= form_with model: [@user, @journal] do |f| %>
   <div>
     <%= f.label t('attributes.title') %> 
     <% if @journal.errors[:title].any? %>
