@@ -1,4 +1,4 @@
-<h1><%= t('views.welcome', name: current_user.first_name) %></h1>
+<h1><%= t('views.welcome', name: @user.first_name) %></h1>
 <%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
 <br><br><br>
 <%= link_to t('buttons.edit'), edit_user_path %>
@@ -48,3 +48,5 @@
       <td><%= @user.role %></td>
     </tr>
 </table>
+<br><br><br>
+<%= link_to 'Journals', user_journals_path(@user) %>

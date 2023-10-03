@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :journals
   has_secure_password
   enum role: { user_role: 0, admin_role: 1 }
   has_one_attached :profile_photo
