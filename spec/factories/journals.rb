@@ -5,6 +5,6 @@ FactoryBot.define do
     content { FFaker::Lorem.paragraph }
     goals_today { FFaker::Lorem.sentence }
     goals_tomorrow { FFaker::Lorem.sentence }
-    association :user
+    user
   end
 end

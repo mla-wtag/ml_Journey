@@ -50,6 +50,9 @@ en:
     login_invalid_validation: This login is invalid
     login_invalid_confirmation: You need to verify your email account
     confirmation_email: Invalid confirmation token or email already confirmed
+  errors: 
+    messages:
+      too_long_journal: is too long
   mailer:
     subject: Verification Email
     confirmation_button: Verify your Email
