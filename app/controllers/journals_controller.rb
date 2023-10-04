@@ -25,7 +25,6 @@ class JournalsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id]) #check if i need this code line, because last time i think didn't need it
     if @journal.destroy
       flash[:alert] = t('alerts.delete_successful')
     else
