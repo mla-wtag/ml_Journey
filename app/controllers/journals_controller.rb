@@ -2,12 +2,7 @@ class JournalsController < ApplicationController
   load_and_authorize_resource :user
   load_and_authorize_resource :journal, through: :user
 
-  def index
-    @user = current_user
-  end
-
   def create
-    @user = current_user
     if @journal.save
       redirect_to user_journals_path(@user)
     else
@@ -16,7 +11,6 @@ class JournalsController < ApplicationController
   end
 
   def update
-    @user = current_user
     if @journal.update(journal_params)
       redirect_to user_journal_path(@user)
     else
@@ -25,8 +19,11 @@ class JournalsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @journal.destroy
+    if @journal.destroy
+      flash[:alert] = t('alerts.delete_successful')
+    else
+      flash[:alert] = t('alerts.delete_failed')
+    end
     redirect_to user_journals_path(@user)
   end
 

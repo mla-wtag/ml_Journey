@@ -1,4 +1,14 @@
 class Journal < ApplicationRecord
   belongs_to :user
-  validates_presence_of(:title, :date, :content, :goals_tomorrow, :goals_today, message: ->(_, _) { I18n.t('validations.presence') })
+
+  validates :title, presence: true
+  validates :date, presence: true
+  validates :content, presence: true
+  validates :goals_tomorrow, presence: true
+  validates :goals_today, presence: true
+
+  validates_length_of :title, maximum: 255, message: 'is too long'
+  validates_length_of :content, maximum: 5000, message: 'is too long'
+  validates_length_of :goals_today, maximum: 500, message: 'is too long'
+  validates_length_of :goals_tomorrow, maximum: 500, message: 'is too long'
 end

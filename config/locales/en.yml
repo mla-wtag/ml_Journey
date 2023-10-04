@@ -37,9 +37,12 @@ en:
     optional_password_change_note: Leave the password fields blank if you don't want to change your password.
     view_journal: View Journal
   confirmations: 
-    delete_user: Are younsure you wna to delete User? 
-    delete_journal: Are you sure you want to delete Journal? 
-  validations: 
+    delete_user: Are you sure you want to delete the user? 
+    delete_journal: Are you sure you want to delete the journal?
+  alerts: 
+    delete_successful: successfully deleted the journal
+    delete_failed:  failed deletion of the journal
+  validations:
     presence: can't be blank
     valid:  must be valid
     content_type: has an invalid content type
