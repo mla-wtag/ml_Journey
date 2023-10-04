@@ -3,7 +3,6 @@ class JournalsController < ApplicationController
   load_and_authorize_resource :journal, through: :user
 
   def index
-    @user = User.find(params[:user_id])
     @journals = @user.journals
   end
 
