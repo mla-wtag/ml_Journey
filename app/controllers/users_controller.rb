@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @user = User.all
+  end
+
   def create
     @user = User.new(user_params)
     @user.generate_confirmation_token
@@ -12,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user
     else
