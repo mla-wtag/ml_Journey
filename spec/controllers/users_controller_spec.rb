@@ -1,6 +1,9 @@
 require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
-  let!(:user1) { FactoryBot.create(:user) }
+  let!(:user) { FactoryBot.create(:user) }
+  before do
+    allow(controller).to receive(:current_user).and_return(user)
+  end
 
   describe 'GET users#new' do
     it 'renders the :new template' do
@@ -11,11 +14,11 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'GET user#show' do
     before do
-      get :show, params: { id: user1.id }
+      get :show, params: { id: user.id }
     end
 
     it 'displays the current user attributes with variables' do
-      expect(assigns(:user)).to eq(user1)
+      expect(assigns(:user)).to eq(user)
     end
 
     it 'renders the :show template' do
@@ -59,17 +62,21 @@ RSpec.describe UsersController, type: :controller do
   describe 'DELETE #destroy' do
     it 'deletes the user' do
       expect {
-        delete :destroy, params: { id: user1.id }
+        delete :destroy, params: { id: user.id }
       }.to change(User, :count).by(-1)
     end
 
     it 'redirects to the root path' do
-      delete :destroy, params: { id: user1.id }
+      delete :destroy, params: { id: user.id }
       expect(response).to redirect_to(root_path)
     end
   end
 
   describe 'GET #confirm_email' do
+    before do
+      allow(controller).to receive(:authorize!).and_return(true)
+    end
+
     context 'when the user is already confirmed' do
       let(:user) { create(:user, confirmed_at: Time.current, confirmation_token: 'some_token') }
 
