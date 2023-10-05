@@ -1,4 +1,4 @@
-class AddNullValidationJournal < ActiveRecord::Migration[7.0]
+class AddNullValidationsToJournals < ActiveRecord::Migration[7.0]
   def up
     change_column_null :journals, :title, false
     change_column_null :journals, :date, false
