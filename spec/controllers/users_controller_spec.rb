@@ -1,8 +1,9 @@
 require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
-  let!(:user) { FactoryBot.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   before do
-    allow(controller).to receive(:current_user).and_return(user)
+    stub_current_user(user)
+    stub_authorize
   end
 
   describe 'GET users#new' do
@@ -73,10 +74,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET #confirm_email' do
-    before do
-      allow(controller).to receive(:authorize!).and_return(true)
-    end
-
     context 'when the user is already confirmed' do
       let(:user) { create(:user, confirmed_at: Time.current, confirmation_token: 'some_token') }
 

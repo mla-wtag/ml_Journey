@@ -16,6 +16,7 @@ end
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include ControllerHelpers, type: :controller
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
       with.test_framework :rspec
