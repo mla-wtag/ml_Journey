@@ -5,7 +5,7 @@ RSpec.describe JournalsController, type: :controller do
   let!(:journal) { FactoryBot.create(:journal, user: user) }
 
   before do
-    allow(controller).to receive(:current_user).and_return(user)
+    sign_in(user)
   end
 
   describe 'GET #index' do

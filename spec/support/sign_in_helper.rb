@@ -1,5 +1,5 @@
-module ControllerHelpers
-  def stub_current_user(user)
+module SignInHelper
+  def sign_in(user)
     allow(controller).to receive(:current_user).and_return(user)
   end
 

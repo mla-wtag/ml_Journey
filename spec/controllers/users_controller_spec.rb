@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
   before do
-    stub_current_user(user)
+    sign_in(user)
     stub_authorize
   end
 
