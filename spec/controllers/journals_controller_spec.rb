@@ -4,9 +4,7 @@ RSpec.describe JournalsController, type: :controller do
   let!(:user) { FactoryBot.create(:user) }
   let!(:journal) { FactoryBot.create(:journal, user: user) }
 
-  before do
-    sign_in(user)
-  end
+  before { sign_in(user) }
 
   describe 'GET #index' do
     it 'renders the :index template' do

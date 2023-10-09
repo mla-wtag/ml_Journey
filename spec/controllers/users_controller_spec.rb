@@ -1,10 +1,7 @@
 require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
-  before do
-    sign_in(user)
-    stub_authorize
-  end
+  before { sign_in(user) }
 
   describe 'GET users#new' do
     it 'renders the :new template' do

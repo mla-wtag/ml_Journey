@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'support/sign_in_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 
@@ -16,7 +17,6 @@ end
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.include SignInHelper, type: :controller
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
       with.test_framework :rspec
