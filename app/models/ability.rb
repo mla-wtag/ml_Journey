@@ -16,7 +16,7 @@ class Ability
   private
 
   def admin_abilities
-    can %i(create read update destroy confirm_email), [User, Journal]
+    can :manage, :all
   end
 
   def user_abilities
