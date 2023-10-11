@@ -2,19 +2,24 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new
-    return unless user
-
-    can :manage, User
+    if user.present?
+      if user.admin_role?
+        admin_abilities
+      else
+        user_abilities
+      end
+    else
+      can %i(create new confirm_email), [User]
+    end
   end
 
   private
 
-  def user_abilities
-    can %i(create read update destroy), User
+  def admin_abilities
+    can :manage, :all
   end
 
-  def admin_abilities
-    can %i(create read update destroy), User
+  def user_abilities
+    can %i(create read update destroy confirm_email), [User, Journal]
   end
 end

@@ -1,0 +1,57 @@
+<h1><%= t('views.edit') %></h1>
+<%= link_to t('buttons.back'), user_journals_path(@user) %>
+<%= form_with model: [@user, @journal] do |f| %>
+  <div>
+    <%= f.label t('attributes.title') %> 
+    <% if @journal.errors[:title].any? %>
+      <span class="validation-error">
+        <%= @journal.errors[:title].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :title %><br>
+  </div> 
+  <div>
+    <%= f.label t('attributes.date') %> 
+    <% if @journal.errors[:date].any? %>
+      <span class="validation-error">
+        <%= @journal.errors[:date].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.date_field :date %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.content') %> 
+    <% if @journal.errors[:content].any? %>
+      <span class="validation-error">
+        <%= @journal.errors[:content].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :content %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.goals_today') %> 
+    <% if @journal.errors[:goals_today].any? %>
+      <span class="validation-error">
+        <%= @journal.errors[:goals_today].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :goals_today %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.goals_tomorrow') %> 
+    <% if @journal.errors[:goals_tomorrow].any? %>
+      <span class="validation-error">
+        <%= @journal.errors[:goals_tomorrow].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :goals_tomorrow %><br>
+  </div>
+  <div> 
+    <%= f.submit t('buttons.edit') %> 
+  </div>
+  <% end %>

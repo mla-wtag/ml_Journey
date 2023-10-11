@@ -1,0 +1,30 @@
+<h1><%= t('views.journal') %></h1>
+<%= link_to t('views.profile'), user_path(@user) %>
+<br><br><br>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('attributes.title') %></th>
+      <th></th>
+      <th><%= t('attributes.date') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.journals.each do |journal| %>
+      <tr>
+        <td><%= journal.title %></td>
+        <td></td>
+        <td><%= journal.date %></td>
+        <td></td>
+        <td><%= link_to t('views.view_journal'), user_journal_path(@user, journal) %></td>
+        <td><%= link_to t('buttons.edit'), edit_user_journal_path(@user, journal) %></td>
+        <td><%= link_to t('buttons.delete'), user_journal_path(@user, journal), data: {
+                                                                                  turbo_method: :delete,
+                                                                                  turbo_confirm: t('confirmations.delete_journal'),
+                                                                                } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br><br>
+<%= link_to t('buttons.create_journal'), new_user_journal_path %>

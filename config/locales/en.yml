@@ -13,12 +13,19 @@ en:
     role_admin: admin
     password: Password
     password_confirmation: Password confirmation
+    title: Title
+    date: Date
+    content: Content
+    goals_today: Goals Today
+    goals_tomorrow: Goals Tomorrow
   buttons:
     register: Register
     create_user: Create Profile
-    edit: Edit Profile
+    edit: Edit
     delete: Delete
     log_out: Log Out
+    create_journal: Create Journal
+    back: Go Back
   views:
     journal: Log Journal
     login: Login
@@ -28,9 +35,14 @@ en:
     task: Tasks
     role: Role
     optional_password_change_note: Leave the password fields blank if you don't want to change your password.
-  confirmations:
-    delete_user: Are you sure?
-  validations: 
+    view_journal: View Journal
+  confirmations: 
+    delete_user: Are you sure you want to delete the user? 
+    delete_journal: Are you sure you want to delete the journal?
+  alerts: 
+    delete_successful: successfully deleted the journal
+    delete_failed:  failed deletion of the journal
+  validations:
     presence: can't be blank
     valid:  must be valid
     content_type: has an invalid content type
