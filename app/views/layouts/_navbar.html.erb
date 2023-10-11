@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <%= link_to t('views.profile'), user_path(@user) %>
+      <br>
+      <%= link_to t('views.journal'), user_journals_path(@user) %>
+      <br>
+      <%= link_to t('views.task'), root_path %>
+      <br>
+      <%= link_to t('views.members'), users_path %>
+    </nav>
+  </header>
+</body>
+</html>

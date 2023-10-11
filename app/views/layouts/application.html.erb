@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% unless @hide_navbar %>
+    <%= render 'layouts/navbar' %>
+    <% end %>
     <% flash.each do |type, message| %>
       <%= message %>
     <% end %>
