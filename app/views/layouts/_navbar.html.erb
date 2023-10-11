@@ -10,7 +10,7 @@
     <nav>
       <%= link_to t('views.profile'), user_path(@user) %>
       <br>
-      <%= link_to t('views.journal'), user_journals_path(@user) %>
+      <%= link_to t('views.journal'), user_journals_path(@user, @journal) %>
       <br>
       <%= link_to t('views.task'), root_path %>
       <br>
