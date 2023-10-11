@@ -20,7 +20,7 @@ class Ability
   end
 
   def user_abilities
-    can %i(create read update destroy), [User, Journal]
+    can %i(create read update destroy confirm_email), [User, Journal]
     cannot :index, User
   end
 end
