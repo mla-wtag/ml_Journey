@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = t('alerts.not_perm')
+    flash[:alert] = t('alerts.not_permitted')
     redirect_to user_path(current_user)
   end
 
