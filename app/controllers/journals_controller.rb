@@ -7,7 +7,6 @@ class JournalsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     if @journal.save
       redirect_to user_journals_path(@user)
     else
@@ -16,7 +15,6 @@ class JournalsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
     if @journal.update(journal_params)
       redirect_to user_journal_path(@user)
     else
