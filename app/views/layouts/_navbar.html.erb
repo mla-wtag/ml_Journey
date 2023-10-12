@@ -8,9 +8,9 @@
 <body>
   <header>
     <nav>
-      <%= link_to t('views.profile'), user_path(@user) %>
+      <%= link_to t('views.profile'), user_path(current_user) %>
       <br>
-      <%= link_to t('views.journal'), user_journals_path(@user, @journal) %>
+      <%= link_to t('views.journal'), user_journals_path(current_user) %> 
       <br>
       <%= link_to t('views.task'), root_path %>
       <br>
