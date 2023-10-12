@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = t('alerts.not_permitted')
     redirect_to user_path(current_user)
   end
 end
