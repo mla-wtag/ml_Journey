@@ -1,5 +1,4 @@
 class UserSessionsController < ApplicationController
-  include ApplicationHelper
   before_action :hide_navbar, only: [:create, :new]
 
   def new

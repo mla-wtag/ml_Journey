@@ -5,7 +5,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'GET #index' do
     context 'when user has admin role' do
-      let(:user) { FactoryBot.create(:user, role: 'admin_role') }
+      let(:user) { FactoryBot.create(:user, role: :admin_role) }
       before { sign_in(user) }
 
       it 'renders the :index template' do
@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     context 'when user has regular role' do
-      let(:user) { FactoryBot.create(:user, role: 'user_role') }
+      let(:user) { FactoryBot.create(:user, role: :user_role) }
       before { sign_in(user) }
 
       it 'not render the :index template and redirects to the show page' do

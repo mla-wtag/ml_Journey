@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
-  include ApplicationHelper
   before_action :hide_navbar, only: [:create, :new]
 
   def index
