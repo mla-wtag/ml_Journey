@@ -2,6 +2,10 @@ class JournalsController < ApplicationController
   load_and_authorize_resource :user
   load_and_authorize_resource :journal, through: :user
 
+  def index
+    @journals = @user.journals
+  end
+
   def create
     if @journal.save
       redirect_to user_journals_path(@user)

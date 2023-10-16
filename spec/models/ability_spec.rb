@@ -24,6 +24,10 @@ RSpec.describe Ability, type: :model do
         is_expected.to be_able_to(action, Journal)
       end
     end
+
+    it 'cannot access the index action' do
+      is_expected.to_not be_able_to(:index, User)
+    end
   end
 
   describe 'for a guest' do

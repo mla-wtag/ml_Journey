@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  before_action :hide_navbar, only: [:create, :new]
+
+  def index
+    @user = User.all
+  end
 
   def create
     @user = User.new(user_params)
@@ -12,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
     if @user.update(user_params)
       redirect_to @user
     else

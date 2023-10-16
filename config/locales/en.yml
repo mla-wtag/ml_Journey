@@ -42,6 +42,7 @@ en:
   alerts: 
     delete_successful: successfully deleted the journal
     delete_failed:  failed deletion of the journal
+    not_permitted: You are not permitted to access this page!
   validations:
     presence: can't be blank
     valid:  must be valid

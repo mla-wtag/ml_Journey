@@ -9,7 +9,7 @@ FactoryBot.define do
     email { FFaker::Internet.email }
     profile_photo { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'test.jpeg'), 'image/jpeg') }
     role { %w[user_role admin_role].sample }
-    password { 'code' }
+    password { FFaker::Internet.password(12) }
     confirmation_token { SecureRandom.urlsafe_base64 }
     confirmed_at { nil }
   end

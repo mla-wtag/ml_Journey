@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_action :hide_navbar, only: [:create, :new]
+
   def new
     @user = User.new
   end

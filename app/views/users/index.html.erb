@@ -1,0 +1,24 @@
+<h1><%= t('views.members') %></h1>
+<%= link_to t('buttons.back_current_user'), user_path(current_user) %>
+<table>
+    <tr>
+      <th><%= t('firstname') %></th>
+      <th><%= t('lastname') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.each do |user| %> 
+     <% next if user == current_user || !user.confirmed? %> 
+      <tr>
+        <td><%= user.first_name %></td>
+        <br>
+        <td><%= user.last_name %></td>
+        <br>
+        <td><%= user.role %></td>
+        <br>
+        <td><%= link_to t('views.profile'), user_path(user) %></td>
+        <br>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

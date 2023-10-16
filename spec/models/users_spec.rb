@@ -1,9 +1,9 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
-  let(:user1) { FactoryBot.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   it 'checks if User can be created with all variables' do
-    expect(user1).to be_valid
+    expect(user).to be_valid
   end
 
   it 'validates presence of attributes' do
