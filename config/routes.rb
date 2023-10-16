@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :users do
     get 'users/confirm_email/:id/:confirmation_token', to: 'users#confirm_email', as: 'confirm_email', on: :member
     resources :journals
+    resources :tasks
   end
 end
