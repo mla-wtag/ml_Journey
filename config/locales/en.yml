@@ -18,6 +18,12 @@ en:
     content: Content
     goals_today: Goals Today
     goals_tomorrow: Goals Tomorrow
+    description: Description
+    status: Status
+    task_status_todo: Todo
+    task_status_progress: In Progress
+    task_status_done: Done
+    assignee: Assign the Task to 
   buttons:
     register: Register
     create_user: Create Profile
@@ -25,6 +31,7 @@ en:
     delete: Delete
     log_out: Log Out
     create_journal: Create Journal
+    create_task: Create Task
     back: Go Back
   views:
     journal: Log Journal
@@ -36,13 +43,15 @@ en:
     role: Role
     optional_password_change_note: Leave the password fields blank if you don't want to change your password.
     view_journal: View Journal
+    view_task: View Task
   confirmations: 
     delete_user: Are you sure you want to delete the user? 
     delete_journal: Are you sure you want to delete the journal?
+    delete_task: Are you sure you want to delete the task?
   alerts: 
-    delete_successful: successfully deleted the journal
-    delete_failed:  failed deletion of the journal
-    not_permitted: You are not permitted to access this page!
+    delete_successful: deletion was successful
+    delete_failed:  deletion has failed
+    not_permitted: You are not permitted to access this page!    
   validations:
     presence: can't be blank
     valid:  must be valid

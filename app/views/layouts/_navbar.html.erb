@@ -11,7 +11,7 @@
       <br>
       <%= link_to t('views.journal'), user_journals_path(current_user) %> 
       <br>
-      <%= link_to t('views.task'), root_path %>
+      <%= link_to t('views.task'), user_tasks_path(current_user) %>
       <br>
       <%= link_to t('views.members'), users_path %>
     </nav>
