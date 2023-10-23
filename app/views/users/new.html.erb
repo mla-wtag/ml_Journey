@@ -1,5 +1,5 @@
 <%= link_to t('buttons.back'), root_path %>
-<h1><%= t('views.create_user') %></h1>
+<h1><%= t('buttons.create_user') %></h1>
 <%= form_with model: @user do |f| %>
   <div>
     <%= f.label t('attributes.first_name') %> 
@@ -85,10 +85,10 @@
   <%= f.label t('views.role') %>
   <br>
   <%= f.radio_button :role, 'user_role' %>
-  <%= f.label :user_role, t('attributes.user') %>
+  <%= f.label :user_role, t('attributes.role_user') %>
   <br>
   <%= f.radio_button :role, 'admin_role' %>
-  <%= f.label :admin_role, t('attributes.admin') %>
+  <%= f.label :admin_role, t('attributes.role_admin') %>
   <% if @user.errors[:role].any? %>
     <span class="validation-error">
       <%= @user.errors[:role].join(', ') %> 

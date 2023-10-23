@@ -1,82 +1,68 @@
 ---
 en:
+  alerts:
+    delete_failed: deletion has failed
+    delete_successful: deletion was successful
+    not_permitted: You are not permitted to access this page!
   attributes:
-    first_name: First Name
-    last_name: Last Name
-    employee_id: Employee ID
-    date_of_birth: Date of birth
-    joining_day: Joining Day
-    designation: Designation
-    profile_photo: Profile Photo 
-    email: Email
-    role_user: user
-    role_admin: admin
-    password: Password
-    password_confirmation: Password confirmation
-    title: Title
-    date: Date
+    assignee: Assignee
     content: Content
+    date: Date
+    date_of_birth: Date of birth
+    description: Description
+    designation: Designation
+    email: Email
+    employee_id: Employee ID
+    first_name: First Name
     goals_today: Goals Today
     goals_tomorrow: Goals Tomorrow
-    description: Description
+    joining_day: Joining Day
+    last_name: Last Name
+    password: Password
+    password_confirmation: Password confirmation
+    profile_photo: Profile Photo
+    role: Role
+    role_admin: Admin
+    role_user: User
     status: Status
-    task_status_todo: Todo
-    task_status_progress: In Progress
     task_status_done: Done
-    assignee: Assignee
+    task_status_progress: In Progress
+    task_status_todo: Todo
+    title: Title
   buttons:
-    register: Register
-    create_user: Create Profile
-    edit: Edit
-    delete: Delete
-    log_out: Log Out
+    back: Go Back
+    back_current_user: Go back to the current user
     create_journal: Create Journal
     create_task: Create Task
-    back: Go Back
+    create_user: Create Profile
+    delete: Delete
+    edit: Edit
+    log_out: Log Out
+    register: Register
+  confirmations:
+    delete_journal: Are you sure you want to delete the journal?
+    delete_task: Are you sure you want to delete the task?
+    delete_user: Are you sure you want to delete the user?
+  mailer:
+    confirmation_button: Verify your Email
+    subject: Verification Email
+  validations:
+    confirmation_email: Invalid confirmation token or email already confirmed
+    content_type: has an invalid content type
+    login_invalid_confirmation: You need to verify your email account
+    login_invalid_validation: This login is invalid
+    photo: is too large (max. is 5 Megabytes)
+    presence: can't be blank
+    valid: must be valid
   views:
     journal: Log Journal
     login: Login
     members: Team Members
+    optional_password_change_note: Leave the password fields blank if you don't want
+      to change your password.
     profile: Profile
-    welcome: 'Welcome, %{name}'
-    task: Tasks
     role: Role
-    optional_password_change_note: Leave the password fields blank if you don't want to change your password.
+    task: Tasks
     view_journal: View Journal
     view_task: View Task
-  confirmations: 
-    delete_user: Are you sure you want to delete the user? 
-    delete_journal: Are you sure you want to delete the journal?
-    delete_task: Are you sure you want to delete the task?
-  alerts: 
-    delete_successful: deletion was successful
-    delete_failed:  deletion has failed
-    not_permitted: You are not permitted to access this page!    
-  validations:
-    presence: can't be blank
-    valid:  must be valid
-    content_type: has an invalid content type
-    photo: is too large (max. is 5 Megabytes)
-    login_invalid_validation: This login is invalid
-    login_invalid_confirmation: You need to verify your email account
-    confirmation_email: Invalid confirmation token or email already confirmed
-  mailer:
-    subject: Verification Email
-    confirmation_button: Verify your Email
-  activerecord:
-    models:
-      user:
-        one: User
-        other: Users
-    attributes:
-      user:
-        first_name: First Name
-        last_name: Last Name
-        employee_id: Employee ID
-        date_of_birth: Date of birth
-        joining_day: Joining Day
-        designation: Designation
-        profile_photo: Profile Photo
-        email: Email
-        password: Password
-        password_confirmation: Password confirmation
+    welcome: Welcome, %{name}
