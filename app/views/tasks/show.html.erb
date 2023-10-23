@@ -22,7 +22,7 @@
   <tr>
   <th><%= t('attributes.assignee') %></th>
     <td>
-      <% users = User.where(id: task.user_ids) %>
+      <% users = User.where(id: @task.user_ids) %>
       <%= users.map { |user| user.first_name }.join(', ') %>
     </td>
   </tr>
