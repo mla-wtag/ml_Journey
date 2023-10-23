@@ -4,8 +4,8 @@ class TasksController < ApplicationController
 
   def create
     @task = @user.tasks.new(task_params)
-    @task.users = User.where(id: params[:task][:user_ids])
     @task.creator_id = @user.id
+    @task.users = User.where(id: params[:task][:user_ids])
     if @task.save
       redirect_to user_tasks_path(@user)
     else

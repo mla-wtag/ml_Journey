@@ -23,7 +23,7 @@ en:
     task_status_todo: Todo
     task_status_progress: In Progress
     task_status_done: Done
-    assignee: Assign the Task to 
+    assignee: Assignee
   buttons:
     register: Register
     create_user: Create Profile

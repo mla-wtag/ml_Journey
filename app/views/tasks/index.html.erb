@@ -4,45 +4,39 @@
 <table>
   <thead>
     <tr>
+      <th><%= t('attributes.assignee') %></th>
+      <th><%= t('attributes.first_name') %></th>
       <th><%= t('attributes.title') %></th>
-      <th></th>
       <th><%= t('attributes.date') %></th>
     </tr>
   </thead>
   <tbody>
-  <% if can? :manage, :all %>
-  <%= puts "Number of tasks: #{@tasks.size}" %>
-    <% @tasks.each do |task| %>
+    <% tasks = current_user.admin_role? ? Task.all : @user.tasks %>
+    <% tasks.each do |task| %>
       <tr>
+        <td>
+          <% users = User.where(id: task.user_ids) %>
+          <% users.each do |user| %>
+            <%= user.first_name %>
+          <% end %>
+        </td>
+        <td>
+          <% task.users.each do |assigned_user| %>
+            <%= assigned_user.first_name %>
+          <% end %>
+        </td>
         <td><%= task.title %></td>
-        <td></td>
         <td><%= task.date %></td>
-        <td></td>
-        <td><%= link_to t('views.view_task'), user_task_path(@user, task.id) %></td>
-        <td><%= link_to t('buttons.edit'), edit_user_task_path(@user, task.id) %></td>
-        <td><%= link_to t('buttons.delete'), user_task_path(@user, task.id), data: {
-                                                                               turbo_method: :delete,
-                                                                               turbo_confirm: t('confirmations.delete_task'),
-                                                                             } %> </td>
+        <td><%= link_to t('views.view_task'), user_task_path(task.user_ids, task.id) %></td>
+        <td><%= link_to t('buttons.edit'), edit_user_task_path(task.user_ids, task.id) %></td>
+        <td>
+          <%= link_to t('buttons.delete'), user_task_path(task.creator, task.id), data: {
+                                                                                    turbo_method: :delete,
+                                                                                    turbo_confirm: t('confirmations.delete_task'),
+                                                                                  } %>
+        </td>
       </tr>
     <% end %>
-  <% else %>
-  <%= puts "Number of tasks: #{@tasks.size}" %>
-    <% @user.tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td></td>
-        <td><%= task.date %></td>
-        <td></td>
-        <td><%= link_to t('views.view_task'), user_task_path(@user, task.id) %></td>
-        <td><%= link_to t('buttons.edit'), edit_user_task_path(@user, task.id) %></td>
-        <td><%= link_to t('buttons.delete'), user_task_path(@user, task.id), data: {
-                                                                               turbo_method: :delete,
-                                                                               turbo_confirm: t('confirmations.delete_task'),
-                                                                             } %> </td>
-      </tr>
-    <% end %>
-  <% end %>
   </tbody>
 </table>
 <br><br><br>

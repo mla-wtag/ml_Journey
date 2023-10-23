@@ -18,9 +18,14 @@
   <tr>
     <th><%= t('attributes.status') %></th>
     <td><%= @task.status %></td>
-  </tr>
+  </tr> 
   <tr>
-    <th><%= t('attributes.assignee') %></th>
-    <td><%= select_tag 'task[user_ids][]', options_from_collection_for_select(User.all, 'id', 'first_name', @task.user_ids), multiple: true %></td>
+  <th><%= t('attributes.assignee') %></th>
+    <td>
+      <% users = User.where(id: @task.user_ids) %>
+      <% users.each do |user| %>
+        <%= user.first_name %>
+      <% end %>
+    </td>
   </tr>
 </table>
