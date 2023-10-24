@@ -15,7 +15,7 @@ RSpec.describe Task, type: :model do
     end
 
     it 'validates the role enum' do
-      should define_enum_for(:status).with_values(todo: 0, progress: 1, done: 2)
+      is_expected.to define_enum_for(:status).with_values(todo: 0, progress: 1, done: 2)
     end
 
     it 'checks that a task without a title is not valid' do
@@ -62,8 +62,8 @@ RSpec.describe Task, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:creator).class_name('User').with_foreign_key('creator_id') }
-    it { should have_many(:assignments).dependent(:destroy) }
-    it { should have_many(:users).through(:assignments) }
+    it { is_expected.to belong_to(:creator).class_name('User').with_foreign_key('creator_id') }
+    it { is_expected.to have_many(:assignments).dependent(:destroy) }
+    it { is_expected.to have_many(:users).through(:assignments) }
   end
 end

@@ -64,13 +64,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_110024) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
+    t.string "title", null: false
+    t.text "description", null: false
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "creator_id", null: false
-    t.date "date"
+    t.date "date", null: false
   end
 
   create_table "users", force: :cascade do |t|

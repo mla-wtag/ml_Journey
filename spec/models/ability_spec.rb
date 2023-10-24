@@ -8,7 +8,7 @@ RSpec.describe Ability, type: :model do
     let(:user) { FactoryBot.create(:user, role: 'admin_role') }
 
     it 'can manage User' do
-      should be_able_to(:manage, :all)
+      is_expected.to be_able_to(:manage, :all)
     end
   end
 
@@ -20,13 +20,17 @@ RSpec.describe Ability, type: :model do
         is_expected.to be_able_to(action, User)
       end
 
+      it 'cannot access the index action' do
+        is_expected.to_not be_able_to(:index, User)
+      end
+
       it "can #{action} Journal" do
         is_expected.to be_able_to(action, Journal)
       end
-    end
 
-    it 'cannot access the index action' do
-      is_expected.to_not be_able_to(:index, User)
+      it "can #{action} Task" do
+        is_expected.to be_able_to(action, Task)
+      end
     end
   end
 
@@ -40,7 +44,11 @@ RSpec.describe Ability, type: :model do
     end
 
     it 'cannot manage Journal' do
-      should_not be_able_to(:manage, Journal)
+      is_expected.not_to be_able_to(:manage, Journal)
+    end
+
+    it 'cannot manage Task' do
+      is_expected.to_not be_able_to(:manage, Task)
     end
   end
 end
