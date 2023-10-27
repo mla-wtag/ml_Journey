@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to user_tasks_path(@user)
+      redirect_to user_task_path(@user)
     else
       render :edit, status: :unprocessable_entity
     end

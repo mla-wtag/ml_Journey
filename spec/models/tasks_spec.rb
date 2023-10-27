@@ -57,8 +57,8 @@ RSpec.describe Task, type: :model do
   describe 'Task association with assignment' do
     it 'has many assignments' do
       is_expected.to have_many(:assignments)
+      is_expected.to have_many(:users).join_table(:assignments)
     end
-    it { should have_many(:users).join_table(:assignments) }
   end
 
   describe 'associations' do
