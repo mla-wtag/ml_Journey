@@ -1,6 +1,5 @@
 <h1><%= t('views.journal') %></h1>
 <br><br>
-<%= link_to t('buttons.back'), user_journals_path %>
 <br><br>
 <table>
   <tr>
@@ -24,4 +23,3 @@
     <td><%= @journal.goals_tomorrow %></td>
   </tr>
 </table>
-<%= link_to t('buttons.PDF'), user_journal_path(@journal, format: :pdf) %>

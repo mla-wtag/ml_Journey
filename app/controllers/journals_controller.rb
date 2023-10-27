@@ -14,6 +14,15 @@ class JournalsController < ApplicationController
     end
   end
 
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@user.first_name}.#{@journal.title}", template: 'journals/downloader', formats: [:html]
+      end
+    end
+  end
+
   def update
     if @journal.update(journal_params)
       redirect_to user_journal_path(@user)
