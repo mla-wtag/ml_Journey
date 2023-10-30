@@ -1,0 +1,63 @@
+<%= link_to t('buttons.back'), user_tasks_path(@user) %> 
+<h1><%= t('views.task') %></h1>
+<%= form_with model: [@user, @task] do |f| %>
+  <div>
+    <%= f.label t('attributes.title') %> 
+    <% if @task.errors[:title].any? %>
+      <span class="validation-error">
+        <%= @task.errors[:title].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :title %><br>
+  </div> 
+  <div>
+    <%= f.label t('attributes.date') %> 
+    <% if @task.errors[:date].any? %>
+      <span class="validation-error">
+        <%= @task.errors[:date].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.date_field :date %><br>
+  </div>
+  <div>
+    <%= f.label t('attributes.description') %> 
+    <% if @task.errors[:description].any? %>
+      <span class="validation-error">
+        <%= @task.errors[:description].join(', ') %> 
+      </span>
+    <% end %>
+    <br>
+    <%= f.text_field :description %><br>
+  </div>
+  <div>
+    <%= f.radio_button :status, 'todo' %>
+    <%= f.label :status, t('attributes.task_status_todo') %>
+    <br>
+    <%= f.radio_button :status, 'progress' %>
+    <%= f.label :status, t('attributes.task_status_progress') %>
+    <br>
+    <%= f.radio_button :status, 'done' %>
+    <%= f.label :status, t('attributes.task_status_done') %>
+    <% if @task.errors[:status].any? %>
+      <span class="validation-error">
+        <%= @task.errors[:status].join(', ') %> 
+      </span>
+    <% end %>
+  </div>
+  <div>
+  <%= f.label t('attributes.assignee') %> 
+  <% if @task.errors[:user_ids].any? %>
+    <span class="validation-error">
+      <%= @task.errors[:user_ids].join(', ') %> 
+    </span>
+  <% end %>
+  <br>
+  <%= select_tag 'task[user_ids][]', options_from_collection_for_select(User.all, 'id', 'first_name', @task.user_ids), multiple: true %>
+</div>
+<br><br><br>
+  <div>
+    <%= f.submit t('buttons.create_task') %> 
+  </div>
+<% end %>

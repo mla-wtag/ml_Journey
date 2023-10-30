@@ -1,0 +1,29 @@
+<h1><%= t('views.task') %></h1>
+<br><br>
+<%= link_to t('buttons.back'), user_tasks_path %>
+<br><br>
+<table>
+  <tr>
+    <th><%= t('attributes.title') %></th>
+    <td><%= @task.title %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.description') %></th>
+    <td><%= @task.description %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.date') %></th>
+    <td><%= @task.date %></td>
+  </tr>
+  <tr>
+    <th><%= t('attributes.status') %></th>
+    <td><%= @task.status %></td>
+  </tr> 
+  <tr>
+  <th><%= t('attributes.assignee') %></th>
+    <td>
+      <% users = User.where(id: @task.user_ids) %>
+      <%= users.map { |user| user.first_name }.join(', ') %>
+    </td>
+  </tr>
+</table>

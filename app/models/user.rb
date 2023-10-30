@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :journals
+  has_many :assignments
+  has_many :tasks, through: :assignments
+  has_many :journals, dependent: :destroy, inverse_of: :user
   has_secure_password
   enum role: { user_role: 0, admin_role: 1 }
   has_one_attached :profile_photo

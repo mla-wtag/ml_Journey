@@ -95,4 +95,10 @@ RSpec.describe User, type: :model do
       expect(confirmed_user.confirmed?).to be_truthy
     end
   end
+
+  describe 'associations' do
+    it { is_expected.to have_many(:assignments) }
+    it { is_expected.to have_many(:tasks).through(:assignments) }
+    it { is_expected.to have_many(:journals).dependent(:destroy).inverse_of(:user) }
+  end
 end

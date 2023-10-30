@@ -1,0 +1,35 @@
+<h1><%= t('views.task') %></h1>
+<%= link_to t('views.profile'), user_path(@user) %>
+<br><br><br>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('attributes.title') %></th>
+      <th><%= t('attributes.date') %></th>
+      <th><%= t('attributes.assignee') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tasks = current_user.admin_role? ? Task.all : @user.tasks %>
+    <% tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.date %></td>
+        <td>
+          <% users = User.where(id: task.user_ids) %>
+          <%= users.map { |user| user.first_name }.join(', ') %>
+        </td>
+        <td><%= link_to t('views.view_task'), user_task_path(task.user_ids, task.id) %></td>
+        <td><%= link_to t('buttons.edit'), edit_user_task_path(task.user_ids, task.id) %></td>
+        <td>
+          <%= link_to t('buttons.delete'), user_task_path(task.user_ids, task.id), data: {
+                                                                                     turbo_method: :delete,
+                                                                                     turbo_confirm: t('confirmations.delete_task'),
+                                                                                   } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br><br>
+<%= link_to t('buttons.create_task'), new_user_task_path %>
