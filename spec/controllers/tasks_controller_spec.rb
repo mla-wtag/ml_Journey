@@ -8,68 +8,64 @@ RSpec.describe TasksController, type: :controller do
 
   describe 'GET #index' do
     let(:task2) { FactoryBot.create(:task, creator: user, user_ids: user.id) }
-
+    before { get :index, params: { user_id: user.id} }
+    
     it 'populates an array of all Tasks' do
-      get :index, params: { user_id: user.id }
       expect(assigns(:tasks)).to match_array [task, task2]
     end
 
     it 'renders the :index template' do
-      get :index, params: { user_id: user.id }
       expect(response).to render_template :index
     end
   end
 
   describe 'POST #create' do
     context 'with valid attributes' do
+      let(:task_attributes) { FactoryBot.attributes_for(:task, user_ids: user.id) }
+      let(:create_action) { post :create, params: { user_id: user.id, task: task_attributes } }
+
       it 'creates a task' do
-        task_attributes = FactoryBot.attributes_for(:task, user_ids: user.id)
-        expect {
-          post :create, params: { user_id: user.id, task: task_attributes }
-        }.to change(Task, :count).by(1)
+        expect { create_action }.to change(Task, :count).by(1)
       end
 
       it 'redirects to the tasks index' do
-        task_attributes = FactoryBot.attributes_for(:task, user_ids: user.id)
-        post :create, params: { user_id: user.id, task: task_attributes }
-        expect(response).to redirect_to user_tasks_path(user)
+        expect(create_action).to redirect_to user_tasks_path(user)
       end
     end
 
     context 'with invalid attributes' do
       let(:invalid_attributes) { { title: nil, description: nil } }
+      let(:create_action) { post :create, params: { user_id: user.id, task: invalid_attributes } }
 
       it 'does not save the new task in the database' do
-        expect {
-          post :create, params: { user_id: user.id, task: invalid_attributes }
-        }.to_not change(Task, :count)
+        expect { create_action }.to_not change(Task, :count)
       end
 
       it 're-renders the :new template with unprocessable entity status' do
-        post :create, params: { user_id: user.id, task: invalid_attributes }
-        expect(response).to render_template(:new)
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(create_action).to render_template(:new)
+        expect(create_action).to have_http_status(:unprocessable_entity)
       end
     end
   end
 
   describe 'PATCH #update' do
     context 'with valid attributes' do
+      before { patch :update, params: { user_id: user.id, id: task.id, task: { title: 'Updated Title' } } }
+      
       it 'updates the task' do
-        patch :update, params: { user_id: user.id, id: task.id, task: { title: 'Updated Title' } }
         task.reload
         expect(task.title).to eq('Updated Title')
       end
 
       it 'redirects to the task show page' do
-        patch :update, params: { user_id: user.id, id: task.id, task: { title: 'Updated Title' } }
         expect(response).to redirect_to user_task_path(user)
       end
     end
 
     context 'with invalid attributes' do
-      it 'does not update the task' do
-        patch :update, params: { user_id: user.id, id: task.id, task: { title: nil } }
+      before { patch :update, params: { user_id: user.id, id: task.id, task: { title: nil } } }   
+      
+      it 'does not update the task' do        
         task.reload
         expect(task.title).not_to be_nil
       end
@@ -83,16 +79,13 @@ RSpec.describe TasksController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let(:user1) { FactoryBot.create(:user) }
+  let(:delete_action) { delete :destroy, params: { user_id: user.id, id: task.id} }
     it 'deletes the task' do
-      expect {
-        delete :destroy, params: { user_id: user.id, id: task.id }
-      }.to change(Task, :count).by(-1)
+      expect { delete_action }.to change(Task, :count).by(-1)
     end
 
     it 'redirects to the tasks index' do
-      delete :destroy, params: { user_id: user.id, id: task.id }
-      expect(response).to redirect_to user_tasks_path(user)
+      expect(delete_action).to redirect_to user_tasks_path(user)
     end
   end
 end

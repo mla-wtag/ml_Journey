@@ -97,8 +97,8 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it { should have_many(:assignments) }
-    it { should have_many(:tasks).through(:assignments) }
-    it { should have_many(:journals).dependent(:destroy).inverse_of(:user) }
+    it { is_expected.to have_many(:assignments) }
+    it { is_expected.to have_many(:tasks).through(:assignments) }
+    it { is_expected.to have_many(:journals).dependent(:destroy).inverse_of(:user) }
   end
 end
