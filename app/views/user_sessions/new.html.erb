@@ -1,22 +1,25 @@
-<h1><%= t('views.login') %></h1>
-<% if flash[:alert] %>
-  <div class="alert">
-    <%= flash[:alert] %>
+<div class='page_container'>
+  <div class='user_sessions_page_container'>
+   <h1 class='h1_user_sessions_page'><%= t('views.login') %></h1>
+   <%= form_with model: @user, url: user_sessions_path do |f| %>
+     <div class='email_text'>
+       <%= f.label t('attributes.email') %>
+      </div>
+      <div class='email_field'> 
+       <%= f.text_field :email %><br>
+     </div>
+     <div class='password_text'>
+       <%= f.label t('attributes.password') %> 
+     </div>
+     <div class='password_field'>
+       <%= f.password_field :password %><br>
+     </div>
+     <div class='login_button'>  
+       <%= f.submit t('views.login'), class: 'login_button' %>
+     </div>
+   <% end %>
+   <div class='register_button'>
+     <%= link_to t('buttons.register'), new_user_path, class: 'register_button' %>
+   </div>
   </div>
-<% end %>
-<%= form_with model: @user, url: user_sessions_path do |f| %>
-    <div>
-    <%= f.label t('attributes.email') %> 
-    <br>
-    <%= f.text_field :email %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.password') %> 
-    <br>
-    <%= f.password_field :password %><br>
-  </div>
-  <p>
-    <%= f.submit t('views.login') %>
-  </p>
-<% end %>
-<%= link_to t('buttons.register'), new_user_path %>
+</div>

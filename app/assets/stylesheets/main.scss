@@ -1,0 +1,127 @@
+body {
+  background-color: #BCF4DE;
+  overflow: hidden;
+}
+
+.page_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.user_sessions_page_container {
+  position: relative;
+  text-align: center;
+  background-color: black;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+  border-radius: 50px;
+  position: relative; 
+}
+
+.user_sessions_page_container::before {
+  content: '';
+  position: absolute;
+  top: -20%; 
+  left: 10%; 
+  width: 80%;
+  height: 120%;
+  border-radius: 100%;
+  background-color: transparent; 
+  border: 20px solid black; 
+  box-sizing: border-box; 
+  z-index: -1;
+}
+
+.h1_user_sessions_page {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 3rem;
+  color: white;
+}
+
+.flash_message {
+  font-family:'Courier New', Courier, monospace;
+  color: red;
+  text-align: center;
+  font-size: xx-large;
+  background-color: darkorange;
+  padding: 1rem; 
+}
+
+.email_text,
+.password_text {
+  font-family:'Courier New', Courier, monospace;
+  text-align: left;
+  color: white;
+}
+
+.email_field,
+.password_field {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.login_button,
+.register_button {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0.5rem;
+  display: grid;
+  font-size: medium;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.login_button:hover,
+.register_button:hover {
+  background: #222222;
+  transform:perspective();
+}
+
+@media screen and (max-width: 600px) {
+  
+  .user_sessions_page_container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 25px;
+  }
+
+  .login-user_sessions_page_container::before {
+    content: '';
+    top: -20%; 
+    left: 25%; 
+    width: 50%;
+    height: 80%;
+    border-radius: 50%;
+    border: 15px solid black; 
+
+  }
+
+  .h1_user_sessions_page {
+    font-size: 1.5rem;
+  }
+
+  .flash-flash_message {
+    font-size: large;
+    padding: 0.5rem; 
+  }
+
+  .email_field,
+  .password_field {
+    padding-bottom: 0.5rem;
+    border-radius: 2.5px;
+  }
+
+  .login_button,
+  .register_button {
+    padding: 0.5rem;
+    font-size: medium;
+    border-radius: 2.5px;
+  }
+}
