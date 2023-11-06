@@ -1,10 +1,13 @@
 <body class='pdf-container'>
     <div class=> 
-      <h1></h1>
-      <h2></h2>
-      <h3> </h3>
-      <h3> </h3>
-      <h3> </h3>
+      <h1 class='h1-pdf-format' ><%= @journal.title %></h1>
+      <h2 class='h2-pdf-format' ><%= @journal.date %></h2>
+      <h2 class='h2-pdf-format' ><%= t('attributes.content') %></h2>
+      <h3 class='h3-pdf-format' ><%= @journal.content %></h3>
+      <h2 class='h2-pdf-format' ><%= t('attributes.goals_today') %></h2>
+      <h3 class='h3-pdf-format' ><%= @journal.goals_today %></h3>
+      <h2 class='h2-pdf-format' ><%= t('attributes.goals_tomorrow') %></h2>
+      <h3 class='h3-pdf-format' ><%= @journal.goals_tomorrow %></h3>
     </div>
 </body>
 
