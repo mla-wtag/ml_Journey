@@ -24,9 +24,9 @@ body {
 .user-sessions-page-container::before {
   content: "";
   position: absolute;
-  top: -20%;
-  left: 10%;
-  width: 80%;
+  top: -50%;
+  left: 14.5%;
+  width: 70%;
   height: 120%;
   border-radius: 100%;
   background-color: transparent;
@@ -102,12 +102,12 @@ body {
 
   .user-sessions-page-container::before {
     content: "";
-    top: -20%;
-    left: 20%;
-    width: 60%;
-    height: 80%;
+    top: -40%;
+    left: 15%;
+    width: 70%;
+    height: 120%;
     border-radius: 50%;
-    border: 15px solid black; //border: 15px solid black;
+    border: 17px solid black; //border: 15px solid black;
   }
 
   .user-sessions-page-container__header {
