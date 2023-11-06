@@ -1,4 +1,4 @@
-<body class='pdf-container'>
+<body class='pdf-format-container'>
     <div class=> 
       <h1 class='h1-pdf-format' ><%= @journal.title %></h1>
       <h2 class='h2-pdf-format' ><%= @journal.date %></h2>
@@ -10,31 +10,3 @@
       <h3 class='h3-pdf-format' ><%= @journal.goals_tomorrow %></h3>
     </div>
 </body>
-
-
-
-<h1><%= t('views.journal') %></h1>
-<br><br>
-<br><br>
-<table>
-  <tr>
-    <th><%= t('attributes.title') %></th>
-    <td><%= @journal.title %></td>
-  </tr>
-  <tr>
-    <th><%= t('attributes.date') %></th>
-    <td><%= @journal.date %></td>
-  </tr>
-  <tr>
-    <th><%= t('attributes.content') %></th>
-    <td><%= @journal.content %></td>
-  </tr>
-  <tr>
-    <th><%= t('attributes.goals_today') %></th>
-    <td><%= @journal.goals_today %></td>
-  </tr>
-  <tr>
-    <th><%= t('attributes.goals_tomorrow') %></th>
-    <td><%= @journal.goals_tomorrow %></td>
-  </tr>
-</table>
