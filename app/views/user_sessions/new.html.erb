@@ -1,25 +1,25 @@
-<div class='page_container'>
-  <div class='user_sessions_page_container'>
-   <h1 class='h1_user_sessions_page'><%= t('views.login') %></h1>
-   <%= form_with model: @user, url: user_sessions_path do |f| %>
-     <div class='email_text'>
-       <%= f.label t('attributes.email') %>
+<div class='page-container'>
+  <div class='user-sessions-page-container'>
+    <h1 class='user-sessions-page-container__header'><%= t('views.login') %></h1>
+    <%= form_with model: @user, url: user_sessions_path do |f| %>
+      <div class='user-sessions-form__text--email'>
+        <%= f.label t('attributes.email') %>
       </div>
-      <div class='email_field'> 
-       <%= f.text_field :email %><br>
-     </div>
-     <div class='password_text'>
-       <%= f.label t('attributes.password') %> 
-     </div>
-     <div class='password_field'>
-       <%= f.password_field :password %><br>
-     </div>
-     <div class='login_button'>  
-       <%= f.submit t('views.login'), class: 'login_button' %>
-     </div>
-   <% end %>
-   <div class='register_button'>
-     <%= link_to t('buttons.register'), new_user_path, class: 'register_button' %>
-   </div>
+      <div class='user-sessions-form__field--email'>
+        <%= f.text_field :email %><br>
+      </div>
+      <div class='user-sessions-form__text--password'>
+        <%= f.label t('attributes.password') %> 
+      </div>
+      <div class='user-sessions-form__field--password'>
+        <%= f.password_field :password %><br>
+      </div>
+      <div class='user-sessions-form__button--login'>  
+        <%= f.submit t('views.login'), class: 'user-sessions-form__button--login' %>
+      </div>
+    <% end %>
+    <div class='user-sessions-page-container__button--register'>
+      <%= link_to t('buttons.register'), new_user_path, class: 'user-sessions-page-container__button--register' %>
+    </div>
   </div>
 </div>

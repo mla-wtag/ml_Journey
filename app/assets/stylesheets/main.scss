@@ -1,127 +1,134 @@
+@import '/partials/variable';
+
 body {
-  background-color: #BCF4DE;
+  background-color: $dark-blue;
   overflow: hidden;
 }
 
-.page_container {
+.page-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-.user_sessions_page_container {
+.user-sessions-page-container {
   position: relative;
   text-align: center;
-  background-color: black;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-bottom: 1rem;
+  background-color: $black;
+  padding: 0rem 5rem 1rem 5rem;
   border-radius: 50px;
-  position: relative; 
+  position: relative;
 }
 
-.user_sessions_page_container::before {
-  content: '';
+.user-sessions-page-container::before {
+  content: "";
   position: absolute;
-  top: -20%; 
-  left: 10%; 
+  top: -20%;
+  left: 10%;
   width: 80%;
   height: 120%;
   border-radius: 100%;
-  background-color: transparent; 
-  border: 20px solid black; 
-  box-sizing: border-box; 
+  background-color: transparent;
+  border: 20px solid $black;
+  box-sizing: border-box;
   z-index: -1;
 }
 
-.h1_user_sessions_page {
-  font-family:'Courier New', Courier, monospace;
+.user-sessions-page-container__header {
+  font-family: "Courier New", Courier, monospace;
   font-size: 3rem;
-  color: white;
+  color: $white;
 }
 
-.flash_message {
-  font-family:'Courier New', Courier, monospace;
-  color: red;
+.flash-message {
+  font-family: "Courier New", Courier, monospace;
+  color: $red;
   text-align: center;
   font-size: xx-large;
-  background-color: darkorange;
-  padding: 1rem; 
+  background-color: $dark-orange;
+  padding: 1rem;
 }
 
-.email_text,
-.password_text {
-  font-family:'Courier New', Courier, monospace;
+.user-sessions-form__text--email,
+.user-sessions-form__text--password {
+  font-family: "Courier New", Courier, monospace;
   text-align: left;
-  color: white;
+  color: $white;
 }
 
-.email_field,
-.password_field {
+.user-sessions-form__field--email,
+.user-sessions-form__field--password {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 0rem 0rem 1rem 0rem;
   border-radius: 5px;
 }
 
-.login_button,
-.register_button {
-  font-family: 'Courier New', Courier, monospace;
-  padding: 0.5rem;
+.user-sessions-form__button--login {
+  font-family: "Courier New", Courier, monospace;
+  height: 3rem;
   display: grid;
   font-size: medium;
-  background-color: #000;
-  color: #fff;
+  background-color: $black;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+}
+
+.user-sessions-page-container__button--register {
+  font-family: "Courier New", Courier, monospace;
+  height: 3rem;
+  display: grid;
+  line-height: 3rem;
+  font-size: medium;
+  background-color: $black;
+  color: $white;
   text-decoration: none;
   border: none;
   border-radius: 5px;
 }
 
-.login_button:hover,
-.register_button:hover {
-  background: #222222;
-  transform:perspective();
+.user-sessions-form__button--login:hover,
+.user-sessions-page-container__button--register:hover {
+  background: $lighter-black;
+  transform: perspective();
 }
 
-@media screen and (max-width: 600px) {
-  
-  .user_sessions_page_container {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-bottom: 0.5rem;
+@media screen and (max-width: 680px) {
+  .user-sessions-page-container {
+    padding: 0rem 2.5rem 0.5rem 2.5rem;
     border-radius: 25px;
   }
 
-  .login-user_sessions_page_container::before {
-    content: '';
-    top: -20%; 
-    left: 25%; 
-    width: 50%;
+  .user-sessions-page-container::before {
+    content: "";
+    top: -20%;
+    left: 20%;
+    width: 60%;
     height: 80%;
     border-radius: 50%;
-    border: 15px solid black; 
-
+    border: 15px solid black; //border: 15px solid black;
   }
 
-  .h1_user_sessions_page {
+  .user-sessions-page-container__header {
     font-size: 1.5rem;
   }
 
-  .flash-flash_message {
+  .flash-message {
     font-size: large;
-    padding: 0.5rem; 
-  }
-
-  .email_field,
-  .password_field {
-    padding-bottom: 0.5rem;
-    border-radius: 2.5px;
-  }
-
-  .login_button,
-  .register_button {
     padding: 0.5rem;
-    font-size: medium;
+  }
+
+  .user-sessions-form__field--email,
+  .user-sessions-form__field--password {
+    padding: 0rem 0rem 0.5rem 0rem;
     border-radius: 2.5px;
+  }
+
+  .user-sessions-form__button--login,
+  .user-sessions-page-container__button--register {
+    font-size:small;
+    border-radius: 2.5px;
+
   }
 }
