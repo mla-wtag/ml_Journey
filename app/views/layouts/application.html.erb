@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', "data-turbo-track": 'reload' %>
+    <%= stylesheet_link_tag 'application', "data-turbo-track": 'reload', "media": 'all' %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -14,9 +13,11 @@
     <% unless @hide_navbar %>
     <%= render 'layouts/navbar' %>
     <% end %>
-    <% flash.each do |type, message| %>
-      <%= message %>
-    <% end %>
-    <%= yield %>
+      <% flash.each do |type, message| %>
+      <div class = 'flash-message'>
+        <%= message %>
+      </div>
+      <% end %>
+      <%= yield %>
   </body>
 </html>

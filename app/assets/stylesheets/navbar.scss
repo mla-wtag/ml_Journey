@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+nav a:visited {
+  color: black;
+}
+
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

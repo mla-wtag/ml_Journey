@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css">
+
 </head>
 <body>
   <header>
     <nav>
       <%= link_to t('views.profile'), user_path(current_user) %>
-      <br>
       <%= link_to t('views.journal'), user_journals_path(current_user) %> 
-      <br>
       <%= link_to t('views.task'), user_tasks_path(current_user) %>
-      <br>
       <%= link_to t('views.members'), users_path %>
     </nav>
   </header>
