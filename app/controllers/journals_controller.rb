@@ -18,7 +18,7 @@ class JournalsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "#{@user.first_name}.#{@journal.title}", template: 'journals/downloader', formats: [:html]
+        render pdf: "#{@user.first_name}.#{@journal.title}", template: 'journals/downloader', formats: [:html], page_size: 'A4', encoding: 'UTF-8'
       end
     end
   end
