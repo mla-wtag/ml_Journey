@@ -31,6 +31,28 @@ class JournalsController < ApplicationController
     redirect_to user_journals_path(@user)
   end
 
+  def download
+    pdf = Prawn::Document.new
+    pdf.font 'Helvetica'
+    pdf.text @journal.date.strftime('%Y-%m-%d'), align: :right
+    pdf.text @journal.title, align: :center, size: 14, style: :bold
+    pdf.font 'Helvetica', size: 12, style: :normal
+    pdf.move_down 20
+    pdf.text 'Content:', style: :bold
+    pdf.text @journal.content
+    pdf.move_down 10
+    pdf.text 'Goals Today:', style: :bold
+    pdf.text @journal.goals_today
+    pdf.move_down 10
+    pdf.text 'Goals Tomorrow:', style: :bold
+    pdf.text @journal.goals_tomorrow
+    filename = "#{@user.first_name}_#{@journal.title.parameterize(separator: '_')}.pdf"
+    send_data(pdf.render,
+              filename: filename,
+              type: 'application/pdf',
+              disposition: 'inline')
+  end
+
   private
 
   def journal_params
