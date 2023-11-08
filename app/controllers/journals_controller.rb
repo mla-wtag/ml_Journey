@@ -46,7 +46,7 @@ class JournalsController < ApplicationController
     pdf.move_down 10
     pdf.text t('attributes.goals_tomorrow'), style: :bold
     pdf.text @journal.goals_tomorrow
-    filename = "#{@user.first_name}_#{@journal.title.parameterize(separator: '_')}.pdf"
+    filename = "#{@user.first_name}__#{@journal.title.parameterize(separator: '_')}.pdf"
     send_data(pdf.render,
               filename: filename,
               type: 'application/pdf',
