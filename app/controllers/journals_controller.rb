@@ -38,13 +38,13 @@ class JournalsController < ApplicationController
     pdf.text @journal.title, align: :center, size: 14, style: :bold
     pdf.font 'Helvetica', size: 12, style: :normal
     pdf.move_down 20
-    pdf.text 'Content:', style: :bold
+    pdf.text t('attributes.content'), style: :bold
     pdf.text @journal.content
     pdf.move_down 10
-    pdf.text 'Goals Today:', style: :bold
+    pdf.text t('attributes.goals_today'), style: :bold
     pdf.text @journal.goals_today
     pdf.move_down 10
-    pdf.text 'Goals Tomorrow:', style: :bold
+    pdf.text t('attributes.goals_tomorrow'), style: :bold
     pdf.text @journal.goals_tomorrow
     filename = "#{@user.first_name}_#{@journal.title.parameterize(separator: '_')}.pdf"
     send_data(pdf.render,
