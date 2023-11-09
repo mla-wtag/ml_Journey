@@ -146,40 +146,45 @@ body {
 
 .user-page-profile-picture {
   text-align: center;
+
+  & img {
+    border-radius: 20px; /* rounded edges */
+    width: 150px; /* adjust size as needed */
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
 }
 
-.user-page-profile-picture img {
-  border-radius: 50%; /* circular profile picture */
-  width: 150px; /* adjust size as needed */
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 10px;
+// label classes
+.user-page-label-profile-picture,
+.user-page-label-first_name,
+.user-page-label-last_name,
+.user-page-label-employee_id,
+.user-page-label-date_of_birth,
+.user-page-label-email,
+.user-page-label-joining_day,
+.user-page-label-designation,
+.user-page-label-role {
+  font-size: large;
+  font-weight: bold;
 }
 
 
-.user-page-first_name {
-
+// field classes
+.user-page-field-first_name,
+.user-page-field-last_name,
+.user-page-field-employee_id,
+.user-page-field-date_of_birth,
+.user-page-field-email,
+.user-page-field-joining_day,
+.user-page-field-designation,
+.user-page-field-role {
+  font-size: medium;
 }
 
-.user-page-last_name {
 
-}
-.user-page-employee_id {
 
-}
-.user-page-date_of_birth {
 
-}
-.user-page-joining_day {
 
-}
-.user-page-designation {
-
-}
-.user-page-email {
-
-}
-.user-page-role {
-
-}
 // profile page-------------------------------------------------------------

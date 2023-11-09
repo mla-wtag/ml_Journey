@@ -3,44 +3,75 @@
     <%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
     <%= link_to t('buttons.edit'), edit_user_path %>
     <%= link_to t('buttons.delete'), user_path(@user), data: {
-                                                         turbo_method: :delete,
-                                                         turbo_confirm: t('confirmations.delete_user'),
-                                                       } %>
+                                                                 turbo_method: :delete,
+                                                                 turbo_confirm: t('confirmations.delete_user'),
+                                                               } %>
 
-    <div class='user-page-profile-picture'>
+    <div class='user-page-label-profile-picture'>
       <%= t('attributes.profile_photo') %>
+    </div>
+    <div class='user-page-profile-picture'>
       <% if @user.profile_photo.attached? %>
-       <%= image_tag(@user.image_resize) %>
+        <%= image_tag(@user.image_resize) %>
       <% end %>
     </div>
-    <div class='user-page-first_name'>
+
+    <div class='user-page-label-first_name'>
       <%= t('attributes.first_name') %> 
+    </div>
+    <div class='user-page-field-first_name'>
       <%= @user.first_name %>
     </div>
-    <div class='user-page-last_name'>
+
+    <div class='user-page-label-last_name'>
       <%= t('attributes.last_name') %> 
+    </div>
+    <div class='user-page-field-last_name'>
       <%= @user.last_name %>
     </div>
-    <div>
+
+    <div class='user-page-label-employee_id'>
       <%= t('attributes.employee_id') %> 
+    </div>
+    <div class='user-page-field-employee_id'>
+      <%= @user.employee_id %>
+    </div>
+
+    <div class='user-page-label-date_of_birth'>
+      <%= t('attributes.date_of_birth') %> 
+    </div>
+    <div class='user-page-field-date_of_birth'>
       <%= @user.date_of_birth %>
     </div>
-      <%= t('attributes.date_of_birth') %> 
-      <%= @user.email %>
-    <div>
-      <%= t('attributes.joining_day') %> 
-      <%= @user.designation %>
-    </div>
-      <%= t('attributes.designation') %> 
-      <%= @user.employee_id %>
-    <div>
+
+    <div class='user-page-label-email'>
       <%= t('attributes.email') %> 
+    </div>
+    <div class='user-page-field-email'>
+      <%= @user.email %>
+    </div>
+
+    <div class='user-page-label-joining_day'>
+      <%= t('attributes.joining_day') %> 
+    </div>
+    <div class='user-page-field-joining_day'>
       <%= @user.joining_day %>
     </div>
-    <div>
+
+    <div class='user-page-label-designation'>
+      <%= t('attributes.designation') %> 
+    </div>
+    <div class='user-page-field-designation'>
+      <%= @user.designation %>
+    </div>
+
+    <div class='user-page-label-role'>
       <%= t('attributes.role') %> 
+    </div>
+    <div class='user-page-field-role'>
       <%= @user.role %>
     </div>
+
     <div> 
       <%= link_to t('views.task'), user_tasks_path(@user) %>
       <%= link_to t('views.journal'), user_journals_path(@user) %>
