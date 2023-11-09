@@ -138,10 +138,13 @@ body {
 // profile page-------------------------------------------------------------
 
 .user-page-show-container {
-  background-color: #fff; /* white background for content */
-  padding: 20px;
+  background-color: #DFF3E4;
+  padding: 2rem;
+  width: 25rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width:30rem;
+  
 }
 
 .user-page-profile-picture {
@@ -155,6 +158,25 @@ body {
     margin-bottom: 10px;
   }
 }
+
+.user-page-buttons-profile {
+  text-align: center;
+
+  .user-page-button-edit,
+  .user-page-button-delete {
+    display: inline-block;
+    width: 48%; // Adjust as needed, leaving a little space for separation
+  }
+
+  .user-page-button-edit {
+    text-align: left;
+  }
+
+  .user-page-button-delete {
+    text-align: right;
+  }
+}
+
 
 // label classes
 .user-page-label-profile-picture,
@@ -184,6 +206,29 @@ body {
 }
 
 
+// SCSS code
+.user-page-buttons-pages {
+  text-align: center;
+
+  .user-page-button-task,
+  .user-page-button-journal,
+  .user-page-button-members {
+    display: inline-block;
+    width: 30%; // Adjust as needed, leaving a little space for separation
+  }
+
+  .user-page-button-task {
+    text-align: left;
+  }
+
+  .user-page-button-journal {
+    text-align: center;
+  }
+
+  .user-page-button-members {
+    text-align: right;
+  }
+}
 
 
 
