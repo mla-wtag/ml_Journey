@@ -12,6 +12,9 @@ body {
   min-height: 100vh;
 }
 
+
+// Login page-------------------------------------------------------------
+
 .user-sessions-page-container {
   position: relative;
   text-align: center;
@@ -131,3 +134,52 @@ body {
 
   }
 }
+
+// profile page-------------------------------------------------------------
+
+.user-page-show-container {
+  background-color: #fff; /* white background for content */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle box shadow */
+}
+
+.user-page-profile-picture {
+  text-align: center;
+}
+
+.user-page-profile-picture img {
+  border-radius: 50%; /* circular profile picture */
+  width: 150px; /* adjust size as needed */
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+
+.user-page-first_name {
+
+}
+
+.user-page-last_name {
+
+}
+.user-page-employee_id {
+
+}
+.user-page-date_of_birth {
+
+}
+.user-page-joining_day {
+
+}
+.user-page-designation {
+
+}
+.user-page-email {
+
+}
+.user-page-role {
+
+}
+// profile page-------------------------------------------------------------
