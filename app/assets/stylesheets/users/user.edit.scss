@@ -1,0 +1,98 @@
+@import 'partials/variable';
+
+.user-page-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .validation-error { 
+    color: $red;
+  }
+
+  .user-page-edit-forms {
+    width: 90%;
+
+    .user-page-edit-label-first_name,
+    .user-page-edit-label-last_name, 
+    .user-page-edit-label-employee_id,
+    .user-page-edit-label-date_of_birth,
+    .user-page-edit-label-email,
+    .user-page-edit-label-joining_day,
+    .user-page-edit-label-designation {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .user-page-edit-field-first_name,
+    .user-page-edit-field-last_name, 
+    .user-page-edit-field-employee_id,
+    .user-page-edit-field-date_of_birth,
+    .user-page-edit-field-email,
+    .user-page-edit-field-joining_day,
+    .user-page-edit-field-designation {
+      margin: 0rem 0rem 1rem 0rem;
+      .user-page-edit-field-input {
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 0.3rem;
+        border: none;
+      }
+    }
+
+    .user-page-edit-label-profile-photo {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .user-page-edit-field-profile-photo {
+
+      .user-page-edit-field-input-profile-photo {
+        font-family: 'Courier New', Courier, monospace;
+        width: 100%
+      }
+
+    }
+
+    .user-page-edit-button {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0rem 0rem 0rem;
+
+      .user-page-edit-button-back {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: medium;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        color: $white;
+        background-color: $dark-green;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.5rem;
+        text-align: left;
+      }
+
+      .user-page-edit-button-edit {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      padding: 0.5rem;
+      margin: 0.2rem;
+      color: $white;
+      background-color: $dark-green;
+      text-decoration: none;
+      border: none;
+      border-radius: 0.5rem;
+      text-align: right;
+      width: auto;
+      }
+    }
+  }
+}

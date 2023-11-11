@@ -1,82 +1,33 @@
 <div class='page-container'>
   <div class='user-page-show-container'>
-    <div class='user-page-buttons-profile'>
-      <div class ='user-page-button-edit'>
-      <%= link_to t('buttons.edit'), edit_user_path %>
-      </div>
-      <div class='user-page-button-delete'>
-      <%= link_to t('buttons.delete'), user_path(@user), data: {
+    <h1 class='h1title'><%= t('attributes.profile') %></h1>
+    <div class='user-page-show-buttons-profile'>
+      <%= link_to t('buttons.edit'), edit_user_path, class: 'user-page-show-button-edit' %>
+      <%= link_to t('buttons.delete'), user_path(@user), class: 'user-page-show-button-delete', data: {
                                                            turbo_method: :delete,
                                                            turbo_confirm: t('confirmations.delete_user'),
-                                                         } %>
-      </div>
+                                                         } %>   
     </div>
-    <div class='user-page-label-profile-picture'>
-      <%= t('attributes.profile_photo') %>
-    </div>
-    <div class='user-page-profile-picture'>
+    <div class='user-page-show-profile-photo'>
       <% if @user.profile_photo.attached? %>
         <%= image_tag(@user.image_resize) %>
       <% end %>
     </div>
-    <div class='user-page-label-first_name'>
-      <%= t('attributes.first_name') %> 
-    </div>
-    <div class='user-page-field-first_name'>
-      <%= @user.first_name %>
-    </div>
-    <div class='user-page-label-last_name'>
-      <%= t('attributes.last_name') %> 
-    </div>
-    <div class='user-page-field-last_name'>
-      <%= @user.last_name %>
-    </div>
-    <div class='user-page-label-employee_id'>
-      <%= t('attributes.employee_id') %> 
-    </div>
-    <div class='user-page-field-employee_id'>
-      <%= @user.employee_id %>
-    </div>
-    <div class='user-page-label-date_of_birth'>
-      <%= t('attributes.date_of_birth') %> 
-    </div>
-    <div class='user-page-field-date_of_birth'>
-      <%= @user.date_of_birth %>
-    </div>
-    <div class='user-page-label-email'>
-      <%= t('attributes.email') %> 
-    </div>
-    <div class='user-page-field-email'>
-      <%= @user.email %>
-    </div>
-    <div class='user-page-label-joining_day'>
-      <%= t('attributes.joining_day') %> 
-    </div>
-    <div class='user-page-field-joining_day'>
-      <%= @user.joining_day %>
-    </div>
-    <div class='user-page-label-designation'>
-      <%= t('attributes.designation') %> 
-    </div>
-    <div class='user-page-field-designation'>
-      <%= @user.designation %>
-    </div>
-    <div class='user-page-label-role'>
-      <%= t('attributes.role') %> 
-    </div>
-    <div class='user-page-field-role'>
-      <%= @user.role %>
-    </div>
-    <div class='user-page-buttons-pages'>
-      <div class='user-page-button-task'>
-        <%= link_to t('views.task'), user_tasks_path(@user) %>
+    <% fields = ['first_name', 'last_name', 'employee_id', 'date_of_birth', 'email', 'joining_day', 'designation', 'role'] %>
+    <% fields.each do |field| %>
+      <div class="user-page-show-<%= field %>">
+        <div class="user-page-show-label-column">
+          <span><%= t("attributes.#{field}") %></span>
+        </div>
+        <div class="user-page-show-field-column">
+          <span class="user-page-field-<%= field %>"><%= @user.send(field) %></span>
+        </div>
       </div>
-      <div class='user-page-button-journal'>
-        <%= link_to t('views.journal'), user_journals_path(@user) %>
-      </div>
-      <div class='user-page-button-members'>
-        <%= link_to t('views.members'), users_path %>
-      </div>
+    <% end %>
+    <div class='user-page-show-buttons-pages'>
+        <%= link_to t('views.task'), user_tasks_path(@user), class: 'user-page-show-button-task' %>
+        <%= link_to t('views.journal'), user_journals_path(@user), class: 'user-page-show-button-journal' %>
+        <%= link_to t('views.members'), users_path, class: 'user-page-show-button-members' %>
     </div>
   </div>
 </div>
