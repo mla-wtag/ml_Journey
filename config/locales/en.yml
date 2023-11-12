@@ -36,6 +36,7 @@ en:
     create_task: Create Task
     create_user: Create Profile
     delete: Delete
+    download: Download PDF
     edit: Edit
     log_out: Log Out
     register: Register
