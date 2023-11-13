@@ -1,0 +1,18 @@
+<div class='page-container'>
+  <div class='goal-page-index-container'>
+    <h1 class='h1title'><%= t('attributes.goal') %></h1>
+    <div class='goal-page-index-buttons-index'>
+      <%= link_to t('buttons.create'), new_user_goal_path %>
+    </div>
+    <div class='goal-page-index-goal'>
+      <% @user.goals.each do |goal| %>
+      <div class='goal-page-index-title'>
+        <span><%= goal.title %></span>
+      </div>
+      <div class='goal-page-index-button-show-goal'>
+        <span><%= link_to t('views.view_goal'), user_goal_path(@user, goal) %></span>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

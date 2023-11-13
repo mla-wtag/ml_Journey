@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="stylesheets/navbar.css">
 
 </head>
 <body>
@@ -12,6 +11,7 @@
       <%= link_to t('views.profile'), user_path(current_user) %>
       <%= link_to t('views.journal'), user_journals_path(current_user) %> 
       <%= link_to t('views.task'), user_tasks_path(current_user) %>
+      <%= link_to t('views.goal'), user_goals_path(current_user) %>
       <%= link_to t('views.members'), users_path %>
       <%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
     </nav>
