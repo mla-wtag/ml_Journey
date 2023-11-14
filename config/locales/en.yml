@@ -43,6 +43,7 @@ en:
     register: Register
   confirmations:
     delete_journal: Are you sure you want to delete the journal?
+    delete_goal: Are you sure you want to delete the goal?
     delete_task: Are you sure you want to delete the task?
     delete_user: Are you sure you want to delete the user?
   mailer:
