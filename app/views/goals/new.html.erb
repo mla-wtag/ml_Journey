@@ -9,44 +9,42 @@
             <%= @goal.errors[:title].join(', ') %> 
           </span>
         <% end %>
-        <%= f.text_field :title %>
       </div>
-
+      <div class='goal-page-new-field-title'>
+        <%= f.text_field :title, class: 'goal-page-new-field-input' %>
+      </div>
       <div class='goal-page-new-label-description'>
-        <%= f.label t('attributes.descrition') %>
+        <%= f.label t('attributes.description') %>
         <% if @goal.errors[:description].any? %>
           <span class="validation-error">
             <%= @goal.errors[:description].join(', ') %> 
           </span>
         <% end %>
-        <%= f.text_field :description %>
       </div>
-
+      <div class='goal-page-new-field-description'>
+        <%= f.text_field :description, class: 'goal-page-new-field-input' %>
+      </div>
       <div class='goal-page-new-label-date'>
         <%= f.label t('attributes.date') %>
-        <% if @goal.errors[:goal].any? %>
+        <% if @goal.errors[:date].any? %>
           <span class="validation-error">
-            <%= @goal.errors[:goal].join(', ') %> 
+            <%= @goal.errors[:date].join(', ') %> 
           </span>
         <% end %>
-        <%= f.date_field :date %>
       </div>
-
+      <div class='goal-page-new-field-date'>
+        <%= f.date_field :date, class: 'goal-page-new-field-input' %>
+      </div>
       <div class='goal-page-new-label-status'>
         <%= f.label t('attributes.status') %>
-        <% if @goal.errors[:status].any? %>
-          <span class="validation-error">
-            <%= @goal.errors[:status].join(', ') %> 
-          </span>
-        <% end %>
-          <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %>
       </div>
-      
+      <div class='goal-page-new-field-status'>
+        <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] }, class: 'goal-page-new-field-input' %>
+      </div>
       <div class='goal-page-new-buttons'>
-        <%= link_to t('attributes.back'), user_goals_path, class: 'user-page-new-button-back' %>
-        <%= f.submit t('buttons.create'), class: 'user-page-new-button-create' %>
+        <%= link_to t('attributes.back'), user_goals_path(@user), class: 'goal-page-new-button-back' %>
+        <%= f.submit t('buttons.create_goal'), class: 'goal-page-new-button-create' %>
       </div>
-      
       <% end %>
   </div>
 </div>
