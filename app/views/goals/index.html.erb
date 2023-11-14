@@ -4,7 +4,6 @@
     <div class='goal-page-index-buttons-index'>
       <%= link_to t('buttons.create'), new_user_goal_path, class: 'goal-page-index-button-create' %>
     </div>
-
     <% @user.goals.each do |goal| %>
       <div class='goal-page-index-item'>
         <div class='goal-page-index-title'>
@@ -15,6 +14,5 @@
         </div>
       </div>
     <% end %>
-
   </div>
 </div>
