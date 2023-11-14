@@ -3,7 +3,7 @@ class GoalsController < ApplicationController
   load_and_authorize_resource :goal, through: :user
 
   def index
-    @goal = @user.goals
+    @goals = @user.goals
   end
 
   def create
