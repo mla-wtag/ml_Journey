@@ -1,26 +1,28 @@
-<h1><%= t('views.members') %></h1>
-<%= link_to t('buttons.back_current_user'), user_path(current_user) %>
-<table>
-    <tr>
-      <th><%= t('attributes.first_name') %></th>
-      <th><%= t('attributes.last_name') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.each do |user| %> 
-     <% next if user == current_user || !user.confirmed? %> 
-      <tr>
-        <td><%= user.first_name %></td>
-        <br>
-        <td><%= user.last_name %></td>
-        <br>
-        <td><%= user.role %></td>
-        <br>
-        <td><%= link_to t('views.profile'), user_path(user) %></td>
-        <br>
-        <td><%= link_to 'change role', update_role_user_path(user) %></td>
-        <br>
-      </tr>
+<div class='page-container'>
+  <div class='user-page-index-container'>
+    <h1 class='h1title'><%= t('views.members') %></h1>
+     <div class='user-page-index-buttons-index'>
+      <%= link_to t('buttons.back_current_user'), user_path(current_user), class: 'user-page-index-button-myprofile' %>
+    </div>
+    <% @user.each do |user| %>
+    <% next if user == current_user || !user.confirmed? %>
+    <div class='user-page-index-item'>
+      <div class='user-page-index-first_name'>
+        <span><%= user.first_name %></span>
+      </div>
+      <div class='user-page-index-last_name'>
+        <span> <%= user.last_name %> </span>
+      </div>
+      <div class='user-page-index-role'>
+        <span> <%= user.role %> </span>
+      </div>
+      <div class='user-page-index-buttons'>
+        <span><%= link_to t('views.profile'), user_path(user), class: 'user-page-index-button-profile' %></span>
+        <span><%= link_to t('buttons.change_role'), update_role_user_path(user), class: 'user-page-index-button-change_role', data: { turbo_confirm: t('confirmations.change_role'),
+                                                                                                                                      turbo_method: :get } %>
+        </span>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
