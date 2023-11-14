@@ -1,6 +1,8 @@
 ---
 en:
   alerts:
+    ability_user_role: has now user rights!
+    ability_admin_role: has now admin rights!
     delete_failed: deletion has failed
     delete_successful: deletion was successful
     not_permitted: You are not permitted to access this page!
