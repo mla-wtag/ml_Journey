@@ -1,125 +1,69 @@
-<%= link_to t('buttons.back'), root_path %>
-<h1><%= t('buttons.create_user') %></h1>
-<%= form_with model: @user do |f| %>
-  <div>
-    <%= f.label t('attributes.first_name') %> 
-    <% if @user.errors[:first_name].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:first_name].join(', ') %> 
-      </span>
+<div class='page-container'>
+  <div class='user-page-new-container'>
+    <h1 class='h1title'><%= t('views.create') %></h1>
+    <%= form_with(model: @user, class: 'user-page-new-forms') do |f| %>
+    <% fields = ['first_name', 'last_name', 'employee_id', 'designation', 'email'] %>
+    <% fields.each do |field| %>
+      <div class="user-page-new-label-<% field %>">
+        <%= f.label t("attributes.#{field}"), class: "user-page-new-label-#{field}" %>
+        <% if @user.errors[field].any? %>
+          <span class="validation-error">
+            <%= @user.errors[field].join(', ') %> 
+          </span>
+        <% end %>
+      </div>
+      <div class="user-page-new-field-<%= field %>">
+         <%= f.text_field field.to_sym, class: 'user-page-new-field-input' %>
+      </div>
     <% end %>
-    <br>
-    <%= f.text_field :first_name %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.last_name') %> 
-    <% if @user.errors[:last_name].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:last_name].join(', ') %> 
-      </span>
+    <div class='user-page-new-label-date_of_birth'>
+      <%= f.label t('attributes.date_of_birth'), class: 'user-page-new-label-date_of_birth' %>
+      <% if @user.errors[:date_of_birth].any? %>
+        <span class="validation-error">
+          <%= @user.errors[:date_of_birth].join(', ') %> 
+        </span>
+      <% end %>
+    </div>
+    <div class='user-page-new-field-date_of_birth'>
+      <%= f.date_field :date, class: 'user-page-new-field-input' %>
+    </div>
+    <div class='user-page-new-label-joining_day'>
+      <%= f.label t('attributes.joining_day') %>
+      <% if @user.errors[:joining_day].any? %>
+        <span class="validation-error">
+          <%= @user.errors[:joining_day].join(', ') %> 
+        </span>
+      <% end %>
+    </div>
+    <div class='user-page-new-field-joining_day'>
+      <%= f.date_field :joining_day, class: 'user-page-new-field-input' %>
+    </div>
+    <div class='user-page-new-label-password'>
+      <%= f.label t('attributes.password') %>
+      <% if @user.errors[:password].any? %>
+        <span class="validation-error">
+          <%= @user.errors[:password].join(', ') %> 
+        </span>
+      <% end %>
+    </div>
+    <div class='user-page-new-field-password'>
+      <%= f.text_field :password, class: 'user-page-new-field-input' %>
+    </div>
+    <div class='user-page-new-label-password_confirmation'>
+      <%= f.label t('attributes.password_confirmation'), class: 'user-page-new-label-password_confirmation' %>
+      <% if @user.errors[:password_confirmation].any? %>
+        <span class="validation-error">
+          <%= @user.errors[:password_confirmation].join(', ') %> 
+        </span>
+      <% end %>
+    </div>
+    <div class='user-page-new-field-password_confirmation'>
+      <%= f.text_field :password_confirmation, class: 'user-page-new-field-input' %>
+    </div>
+    <div class='user-page-new-button'>
+      <%= link_to t('buttons.back'), new_user_session_path, class: 'user-page-new-button-back' %>
+      <%= f.submit t('buttons.create_user'), class: 'user-page-new-button-create' %>
+    </div>
     <% end %>
-    <br>
-    <%= f.text_field :last_name %><br>
   </div>
-  <div>
-    <%= f.label t('attributes.employee_id') %> 
-    <% if @user.errors[:employee_id].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:employee_id].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.text_field :employee_id %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.date_of_birth') %> 
-    <% if @user.errors[:date_of_birth].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:date_of_birth].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.date_field :date_of_birth %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.joining_day') %> 
-    <% if @user.errors[:joining_day].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:joining_day].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.date_field :joining_day %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.designation') %> 
-    <% if @user.errors[:designation].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:designation].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.text_field :designation %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.profile_photo') %> 
-    <% if @user.errors[:profile_photo].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:profile_photo].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.file_field :profile_photo %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.email') %> 
-    <% if @user.errors[:email].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:email].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.text_field :email %><br>
-  </div>
-  <div>
-  <%= f.label t('views.role') %>
-  <br>
-  <%= f.radio_button :role, 'user_role' %>
-  <%= f.label :user_role, t('attributes.role_user') %>
-  <br>
-  <%= f.radio_button :role, 'admin_role' %>
-  <%= f.label :admin_role, t('attributes.role_admin') %>
-  <% if @user.errors[:role].any? %>
-    <span class="validation-error">
-      <%= @user.errors[:role].join(', ') %> 
-    </span>
-  <% end %>
-  <br>
-  </div>
-  <div>
-    <%= f.label t('attributes.password') %> 
-    <% if @user.errors[:password].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:password].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.password_field :password %><br>
-  </div>
-  <div>
-    <%= f.label t('attributes.password_confirmation') %> 
-    <% if @user.errors[:password_confirmation].any? %>
-      <span class="validation-error">
-        <%= @user.errors[:password_confirmation].join(', ') %> 
-      </span>
-    <% end %>
-    <br>
-    <%= f.password_field :password_confirmation %><br>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div>
-    <%= f.submit t('buttons.register') %> 
-  </div>
-<% end %>
+</div>
