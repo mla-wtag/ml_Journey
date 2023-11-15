@@ -4,6 +4,12 @@ body {
   background-color: $dark-blue;
 }
 
+.validation-error { 
+  color: $red;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
 .page-container {
   display: flex;
   justify-content: center;

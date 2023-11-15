@@ -2,7 +2,6 @@
   <div class='task-page-new-container'>
     <h1 class='h1title'> <%= t('views.task') %></h1>
     <%= form_with(model: [@user, @task], class: 'task-page-new-forms') do |f| %>
-    
     <div class='task-page-new-label-title'>
       <%= f.label t('attributes.title'), class: 'task-page-new-label-title' %>
       <% if @task.errors[:title].any? %>
@@ -14,7 +13,6 @@
     <div class='task-page-new-field-title'>
       <%= f.text_field :title, class: 'task-page-new-field-input' %>
     </div>
-
     <div class='task-page-new-label-date'>
       <%= f.label t('attributes.date'), class: 'task-page-new-label-date' %>
       <% if @task.errors[:date].any? %>
@@ -26,7 +24,6 @@
     <div class='task-page-new-field-date'>
       <%= f.date_field :date, class: 'task-page-new-field-input' %>
     </div>
-
     <div class='task-page-new-label-description'>
       <%= f.label t('attributes.description'), class: 'task-page-new-label-description' %>
       <% if @task.errors[:description].any? %>
@@ -38,7 +35,6 @@
     <div class='task-page-new-field-description'>
       <%= f.text_field :description, class: 'task-page-new-field-input' %>
     </div>
-
     <div class='task-page-new-label-status'>
       <%= f.label t('attributes.status') %>
       <% if @task.errors[:status].any? %>
@@ -51,9 +47,6 @@
       <%= f.select :status, Task.statuses.keys.to_a.map { |status| [t("task.statuses.#{status}"), status] }, class: 'task-page-new-field-input' %>
     </div>
     <div class='task-page-new-field-assignee'></div>
-
-
-
     <div class='task-page-new-label-assignee'>
       <%= f.label t('attributes.assignee') %>
       <% if @task.errors[:user_ids].any? %>
@@ -65,7 +58,6 @@
     <div class='task-page-new-field-assignee'>
         <%= select_tag 'task[user_ids][]', options_from_collection_for_select(User.all, 'id', 'first_name', @task.user_ids), multiple: true %>
     </div>
-
     <div class='task-page-new-buttons'>
       <%= link_to t('buttons.back'), user_tasks_path(@user), class: 'task-page-new-button-back' %>
       <%= f.submit t('buttons.create_task'), class: 'task-page-new-button-create' %>

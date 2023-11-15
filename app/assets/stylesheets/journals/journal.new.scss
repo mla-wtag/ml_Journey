@@ -9,12 +9,6 @@
   padding: 2rem;
   border-radius: 1rem;
 
-  .validation-error { 
-    color: $red;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-  }
-
   .journal-page-new-forms {
     width: 90%;
 
@@ -35,6 +29,7 @@
     .journal-page-new-field-goals_tomorrow, 
     .journal-page-new-field-date {
       margin: 0rem 0rem 1rem 0rem;
+
       .journal-page-new-field-input {
         width: 100%;
         height: 1.5rem;
