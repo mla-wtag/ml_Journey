@@ -46,6 +46,7 @@ en:
     delete_goal: Are you sure you want to delete the goal?
     delete_task: Are you sure you want to delete the task?
     delete_user: Are you sure you want to delete the user?
+    logout: Are you sure you wnat to logout?
   mailer:
     confirmation_button: Verify your Email
     subject: Verification Email

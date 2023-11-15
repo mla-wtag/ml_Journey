@@ -1,30 +1,39 @@
-nav {
+.nav-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0.25rem 0.5rem 0rem 0.5rem;
   text-align: center;
-}
+  background-color: #84aba2;
 
-nav a {
-  display: inline-block;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-nav a:visited {
-  color: black;
-}
+  .nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+  }
 
+  .nav-link-logo img {
+    width: 5rem;
+    height: 5rem;
+  }
+  .nav-link img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
+    
+    .nav-link {
+      display: block;
+      padding: 0rem 0rem 0.5rem 0rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 
-  nav a {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  
 }

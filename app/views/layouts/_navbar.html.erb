@@ -7,13 +7,20 @@
 </head>
 <body>
   <header>
-    <nav>
-      <%= link_to t('views.profile'), user_path(current_user) %>
-      <%= link_to t('views.journal'), user_journals_path(current_user) %> 
-      <%= link_to t('views.task'), user_tasks_path(current_user) %>
+    <nav class='nav-items'>
+      <%= link_to(user_path(current_user), class: 'nav-link') do %>
+      <%= image_tag('icons/profile.svg') %>
+      <% end %>
+      <%= link_to t('views.journal'), user_journals_path(current_user), class: 'nav-link' %>
       <%= link_to t('views.goal'), user_goals_path(current_user) %>
-      <%= link_to t('views.members'), users_path %>
-      <%= link_to t('buttons.log_out'), new_user_session_path, data: { turbo_method: :delete } %>
+      <%= link_to(user_path(current_user), class: 'nav-link-logo') do %>
+      <%= image_tag('icons/logo.svg') %>
+      <% end %>
+      <%= link_to t('views.task'), user_tasks_path(current_user), class: 'nav-link' %>
+      <%= link_to t('views.members'), users_path, class: 'nav-link' %>
+      <%= link_to(new_user_session_path, class: 'nav-link', data: { turbo_method: :delete, turbo_confirm: t('confirmations.logout') }) do %>
+      <%= image_tag('icons/logout.svg') %>
+      <% end %>
     </nav>
   </header>
 </body>
