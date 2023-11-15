@@ -19,16 +19,17 @@
   }
 }
 
-
-
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
+    
+    .nav-link {
+      display: block;
+      padding: 0rem 0rem 0.5rem 0rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 
-  nav a {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  
 }
