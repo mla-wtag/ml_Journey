@@ -28,7 +28,7 @@
       <%= f.date_field :date, class: 'journal-page-new-field-input' %>
     </div>
       <div class='journal-page-new-buttons'>
-        <%= link_to t('buttons.back'), user_journals_path, class: 'journal-page-new-button-back' %>
+        <%= link_to t('buttons.back'), user_journals_path(@user), class: 'journal-page-new-button-back' %>
         <%= f.submit t('buttons.create_journal'), class: 'journal-page-new-button-create' %>
       </div>
       <% end %>
