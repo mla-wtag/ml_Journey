@@ -1,10 +1,12 @@
+@import 'partials/variable';
+
 .nav-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem 0.5rem 0rem 0.5rem;
   text-align: center;
-  background-color: #84aba2;
+  background-color: $dark-green;
 
   .nav-link {
     font-family: 'Courier New', Courier, monospace;
@@ -17,6 +19,7 @@
     width: 5rem;
     height: 5rem;
   }
+
   .nav-link img {
     width: 2rem;
     height: 2rem;
@@ -26,7 +29,7 @@
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
-    
+
     .nav-link {
       display: block;
       padding: 0rem 0rem 0.5rem 0rem;
@@ -34,6 +37,4 @@
       box-sizing: border-box;
     }
   }
-
-  
 }
