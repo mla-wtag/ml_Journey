@@ -31,11 +31,12 @@ class UsersController < ApplicationController
 
   def update_role
     if @user.user_role?
-      @user.update(role: 'admin_role')
+      @user.update(role: :admin_role)
       flash[:alert] = "#{@user.first_name} " + t('alerts.ability_admin_role')
     else @user.admin_role?
-      @user.update(role: 'user_role')
-      flash[:alert] = "#{@user.first_name} " + t('alerts.ability_user_role')     end
+      @user.update(role: :user_role)
+      flash[:alert] = "#{@user.first_name} " + t('alerts.ability_user_role')
+    end
     redirect_to users_path
   end
 
