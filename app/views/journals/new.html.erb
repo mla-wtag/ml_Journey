@@ -1,6 +1,6 @@
 <div class='page-container'>
   <div class='journal-page-new-container'>
-    <h1 class='h1title'><%= t('views.journal') %></h1>
+    <h1 class='h1_title'><%= t('views.journal') %></h1>
     <%= form_with(model: [@user, @journal], class: 'journal-page-new-forms') do |f| %>
     <% fields = ['title', 'content', 'goals_today', 'goals_tomorrow'] %>
     <% fields.each do |field| %>

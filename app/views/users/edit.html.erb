@@ -1,6 +1,6 @@
 <div class='page-container'>
   <div class='user-page-edit-container'>
-    <h1 class='h1title'><%= t('buttons.edit') %></h1>
+    <h1 class='h1_title'><%= t('buttons.edit') %></h1>
     <%= form_with(model: @user, class: 'user-page-edit-forms') do |f| %>
       <% fields = ['first_name', 'last_name', 'employee_id', 'date_of_birth', 'joining_day', 'designation', 'email'] %>
       <% fields.each do |field| %>

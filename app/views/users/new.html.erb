@@ -1,6 +1,6 @@
 <div class='page-container'>
   <div class='user-page-new-container'>
-    <h1 class='h1title'><%= t('views.create') %></h1>
+    <h1 class='h1_title'><%= t('views.create') %></h1>
     <%= form_with(model: @user, class: 'user-page-new-forms') do |f| %>
     <% fields = ['first_name', 'last_name', 'employee_id', 'designation', 'email'] %>
     <% fields.each do |field| %>
