@@ -1,0 +1,76 @@
+@import 'partials/variable';
+
+.journal-page-new-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .journal-page-new-forms {
+    width: 90%;
+
+    .journal-page-new-label-title,
+    .journal-page-new-label-content, 
+    .journal-page-new-label-goals_today,
+    .journal-page-new-label-goals_tomorrow, 
+    .journal-page-new-label-date {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .journal-page-new-field-title,
+    .journal-page-new-field-content, 
+    .journal-page-new-field-goals_today,
+    .journal-page-new-field-goals_tomorrow, 
+    .journal-page-new-field-date {
+      margin: 0rem 0rem 1rem 0rem;
+
+      .journal-page-new-field-input {
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 0.3rem;
+        border: none;
+      }
+    }
+
+    .journal-page-new-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem 0rem 0rem 0rem;
+
+      .journal-page-new-button-back {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: medium;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        color: $white;
+        background-color: $dark-green;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.5rem;
+        text-align: center;
+        width: 30%;
+      }
+
+      .journal-page-new-button-create {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      padding: 0.5rem;
+      margin: 0.2rem;
+      color: $white;
+      background-color: $light-green;
+      text-decoration: none;
+      border: none;
+      border-radius: 0.5rem;
+      text-align: center;
+      width: 35%;
+      }
+    }
+  }
+}

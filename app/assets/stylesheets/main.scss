@@ -5,6 +5,12 @@ body {
   margin: 0;
 }
 
+.validation-error { 
+  color: $red;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
 .page-container {
   display: flex;
   justify-content: center;
