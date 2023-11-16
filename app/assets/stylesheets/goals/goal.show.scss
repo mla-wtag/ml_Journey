@@ -1,0 +1,92 @@
+@import 'partials/variable';
+.goal-page-show-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .goal-page-show-buttons-goal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    padding: 0rem 0rem 3rem 0rem;
+    
+    .goal-page-show-button-edit,
+    .goal-page-show-button-delete {
+      width: 15%;
+      padding: 0.5rem;
+      margin: 0.2rem;
+      background-color: $dark-green;
+      border-radius: 0.5rem;
+      display: inline-block;
+      text-decoration: none;
+      color: $white;
+      text-align: center;
+    }
+
+    .goal-page-show-button-delete {
+      background-color: $dark-orange;
+    }
+  }
+
+  .goal-page-show-title,
+  .goal-page-show-description,
+  .goal-page-show-date,
+  .goal-page-show-status {
+    display: flex;
+    width: 100%;
+    padding: 0rem 0rem 1rem 0rem;
+
+    .goal-page-show-label-column,
+    .goal-page-show-field-column {
+      width: 50%;
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .goal-page-show-label-column {
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .goal-page-show-field-column {
+      text-align: left;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .goal-page-show-container {
+    width: 20rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+
+    .goal-page-show-buttons-profile {
+    
+      .goal-page-show-button-edit,
+      .goal-page-show-button-delete {
+        width: 18%;
+      }
+    }
+
+    .goal-page-show-buttons-pages {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      text-align: center;
+
+      .goal-page-show-button-task,
+      .goal-page-show-button-journal,
+      .goal-page-show-button-members {
+        flex-direction: row;
+      }
+    } 
+  }
+}

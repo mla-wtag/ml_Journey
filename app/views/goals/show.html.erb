@@ -1,0 +1,44 @@
+<div class='page-container'>
+  <div class='goal-page-show-container'>
+    <h1 class='h1_title'><%= t('attributes.goal') %></h1>
+    <div class='goal-page-show-buttons-goal'>
+      <%= link_to t('buttons.edit'), edit_user_goal_path, class: 'goal-page-show-button-edit' %>
+      <%= link_to t('buttons.delete'), user_goal_path(@user, @goal), class: 'goal-page-show-button-delete', data: {
+                                                                       turbo_method: :delete,
+                                                                       turbo_confirm: t('confirmations.delete_goal'),
+                                                                     } %>
+    </div>
+      <div class='goal-page-show-title'>
+        <div class='goal-page-show-label-column'>
+          <span><%= t('attributes.title') %></span>
+        </div>
+        <div class='goal-page-show-field-column'>
+          <span class='goal-page-field-title'><%= @goal.send(:title) %></span>
+        </div>
+      </div>
+      <div class='goal-page-show-description'>
+        <div class='goal-page-show-label-column'>
+          <span><%= t('attributes.description') %></span>
+        </div>
+        <div class='goal-page-show-field-column'>
+          <span class='goal-page-field-description'><%= @goal.send(:description) %></span>
+        </div>
+      </div>
+      <div class='goal-page-show-date'>
+        <div class='goal-page-show-label-column'>
+          <span><%= t('attributes.date') %></span>
+        </div>
+        <div class='goal-page-show-field-column'>
+          <span class='goal-page-field-date'><%= @goal.send(:date) %></span>
+        </div>
+      </div>
+      <div class='goal-page-show-status'>
+        <div class='goal-page-show-label-column'>
+          <span><%= t('attributes.status') %></span>
+        </div>
+        <div class='goal-page-show-field-column'>
+          <span class='goal-page-field-status'><%= @goal.send(:status) %></span>
+        </div>
+      </div>
+  </div>
+</div>

@@ -32,6 +32,7 @@ en:
   buttons:
     back: Go Back
     back_current_user: Go back to the current user
+    create_goal: Create Goal
     create_journal: Create Journal
     create_task: Create Task
     create_user: Create Profile
@@ -42,8 +43,10 @@ en:
     register: Register
   confirmations:
     delete_journal: Are you sure you want to delete the journal?
+    delete_goal: Are you sure you want to delete the goal?
     delete_task: Are you sure you want to delete the task?
     delete_user: Are you sure you want to delete the user?
+    logout: Are you sure you wnat to logout?
   mailer:
     confirmation_button: Verify your Email
     subject: Verification Email

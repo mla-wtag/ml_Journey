@@ -2,17 +2,22 @@
 
 body {
   background-color: $dark-blue;
+  margin: 0;
 }
 
 .page-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 94vh;
+  min-height: 90vh;
 }
 
-.h1title {
+.h1_title {
   font-family: 'Courier New', Courier, monospace;
   font-size:x-large;
   margin: 0;
+}
+
+.validation-error { 
+  color: $red;
 }

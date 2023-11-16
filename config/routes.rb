@@ -7,5 +7,6 @@ Rails.application.routes.draw do
       get 'download', on: :member
     end
     resources :tasks
+    resources :goals
   end
 end
