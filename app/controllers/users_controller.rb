@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def update_role
+    if @user.user_role?
+      @user.update(role: :admin_role)
+      flash[:alert] = "#{@user.first_name} " + t('alerts.ability_admin_role')
+    else @user.admin_role?
+      @user.update(role: :user_role)
+      flash[:alert] = "#{@user.first_name} " + t('alerts.ability_user_role')
+    end
+    redirect_to users_path
+  end
+
   def confirm_email
     @user = User.find_by(confirmation_token: params[:confirmation_token])
     if @user&.confirmed_at.present?

@@ -1,6 +1,8 @@
 ---
 en:
   alerts:
+    ability_admin_role: has now admin rights!
+    ability_user_role: has now user rights!
     delete_failed: deletion has failed
     delete_successful: deletion was successful
     not_permitted: You are not permitted to access this page!
@@ -31,7 +33,8 @@ en:
     title: Title
   buttons:
     back: Go Back
-    back_current_user: Go back to the current user
+    back_current_user: My Profile
+    change_role: Change Role
     create_goal: Create Goal
     create_journal: Create Journal
     create_task: Create Task
@@ -42,6 +45,7 @@ en:
     log_out: Log Out
     register: Register
   confirmations:
+    change_role: Are you sure you want to change this users ability?
     delete_journal: Are you sure you want to delete the journal?
     delete_goal: Are you sure you want to delete the goal?
     delete_task: Are you sure you want to delete the task?
@@ -62,11 +66,8 @@ en:
     journal: Log Journal
     login: Login
     members: Team Members
-    optional_password_change_note: Leave the password fields blank if you don't want
-      to change your password.
     profile: Profile
     role: Role
     task: Tasks
     view_journal: View Journal
     view_task: View Task
-    welcome: Welcome, %{name}
