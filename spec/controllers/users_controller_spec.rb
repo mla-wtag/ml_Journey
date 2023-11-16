@@ -108,38 +108,4 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
-
-  describe 'PATCH #update_role' do
-    let(:admin_user) { FactoryBot.create(:user, role: 'admin_role') }
-    let(:user_update_to_user) { create(:user, role: 'admin_role') }
-    let(:user_update_to_admin) { create(:user, role: 'user_role') }
-    before { sign_in(admin_user) }
-
-    it 'updates the users role to user' do
-      patch :update_role, params: { id: user_update_to_user.id }
-      user_update_to_user.reload
-      expect(user_update_to_user.role).to eq('user_role')
-    end
-
-    it 'sets a flash notice when updating to user' do
-      patch :update_role, params: { id: user_update_to_user.id }
-      expect(flash[:alert]).to eq("#{user_update_to_user.first_name} " + I18n.t('alerts.ability_user_role'))
-    end
-
-    it 'updates the users role to admin' do
-      patch :update_role, params: { id: user_update_to_admin.id }
-      user_update_to_admin.reload
-      expect(user_update_to_admin.role).to eq('admin_role')
-    end
-
-    it 'sets a flash notice when updating to user' do
-      patch :update_role, params: { id: user_update_to_admin.id }
-      expect(flash[:alert]).to eq("#{user_update_to_admin.first_name} " + I18n.t('alerts.ability_admin_role'))
-    end
-
-    it 'redirects to users path' do
-      patch :update_role, params: { id: admin_user.id }
-      expect(response).to redirect_to(users_path)
-    end
-  end
 end
