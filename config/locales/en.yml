@@ -35,6 +35,7 @@ en:
     back: Go Back
     back_current_user: My Profile
     change_role: Change Role
+    create_goal: Create Goal
     create_journal: Create Journal
     create_task: Create Task
     create_user: Create Profile
@@ -46,8 +47,10 @@ en:
   confirmations:
     change_role: Are you sure you want to change this users ability?
     delete_journal: Are you sure you want to delete the journal?
+    delete_goal: Are you sure you want to delete the goal?
     delete_task: Are you sure you want to delete the task?
     delete_user: Are you sure you want to delete the user?
+    logout: Are you sure you wnat to logout?
   mailer:
     confirmation_button: Verify your Email
     subject: Verification Email

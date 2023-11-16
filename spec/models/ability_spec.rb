@@ -31,6 +31,10 @@ RSpec.describe Ability, type: :model do
       it "can #{action} Task" do
         is_expected.to be_able_to(action, Task)
       end
+
+      it "can #{action} Goal" do
+        is_expected.to be_able_to(action, Goal)
+      end
     end
   end
 
@@ -49,6 +53,10 @@ RSpec.describe Ability, type: :model do
 
     it 'cannot manage Task' do
       is_expected.to_not be_able_to(:manage, Task)
+    end
+
+    it 'cannot manage Gaol' do
+      is_expected.to_not be_able_to(:manage, Goal)
     end
   end
 end

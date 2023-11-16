@@ -1,0 +1,74 @@
+@import 'partials/variable';
+
+.goal-page-new-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-grey;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .goal-page-new-forms {
+    width: 90%;
+
+    .goal-page-new-label-title,
+    .goal-page-new-label-description,
+    .goal-page-new-label-date,
+    .goal-page-new-label-status {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .goal-page-new-field-title,
+    .goal-page-new-field-description,
+    .goal-page-new-field-date,
+    .goal-page-new-field-status {
+      margin: 0rem 0rem 1rem 0rem;
+      
+      .goal-page-new-field-input {
+        width: 100%;
+        height: 1.5rem;
+        border-radius: 0.3rem;
+        border: none;
+      }
+    }
+    
+    .goal-page-new-buttons {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0rem 0rem 0rem;
+
+      .goal-page-new-button-back {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: medium;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        color: $white;
+        background-color: $dark-green;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.5rem;
+        text-align: left;
+      }
+
+      .goal-page-new-button-create {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: medium;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        color: $white;
+        background-color: $light-green;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.5rem;
+        text-align: right;
+        width: auto;
+      }
+    }
+  }
+}

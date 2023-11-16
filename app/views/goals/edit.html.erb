@@ -1,0 +1,55 @@
+<div class='page-container'>
+  <div class='goal-page-edit-container'>
+    <h1 class='h1_title'><%= t('buttons.edit') %></h1>
+      <%= form_with(model: [@user, @goal], class: 'goal-page-edit-forms') do |f| %>
+        <div class='goal-page-edit-label-title'>
+          <%= f.label t('attributes.title') %>
+          <% if @goal.errors[:title].any? %>
+            <span class="validation-error">
+              <%= @goal.errors[:title].join(', ') %> 
+            </span>
+          <% end %>
+        </div>
+        <div class='goal-page-edit-field-title'>
+          <%= f.text_field :title.to_sym, class: 'goal-page-edit-field-input' %>
+        </div>
+        <div class='goal-page-edit-label-description'>
+          <%= f.label t('attributes.description') %>
+          <% if @goal.errors[:description].any? %>
+            <span class='validation-error'>
+              <%= @goal.errors[:description].join(', ') %> 
+            </span>
+          <% end %>
+        </div>
+        <div class='goal-page-edit-field-description'>
+          <%= f.text_field :description.to_sym, class: 'goal-page-edit-field-input' %>
+        </div>
+        <div class='goal-page-edit-label-date'>
+          <%= f.label t('attributes.date') %>
+          <% if @goal.errors[:date].any? %>
+            <span class='validation-error'>
+              <%= @goal.errors[:date].join(', ') %> 
+            </span>
+          <% end %>
+        </div>
+        <div class='goal-page-edit-field-date'>
+          <%= f.date_field :date.to_sym, class: 'goal-page-edit-field-input' %>
+        </div>
+        <div class='goal-page-edit-label-status'>
+          <%= f.label t('attributes.status') %>
+          <% if @goal.errors[:status].any? %>
+            <span class="validation-error">
+              <%= @goal.errors[:status].join(', ') %> 
+            </span>
+          <% end %>
+        </div>
+        <div class='goal-page-edit-field-status'>
+          <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %>
+        </div>
+        <div class='goal-page-edit-button'>
+          <%= link_to t('attributes.back'), user_goals_path(@user), class: 'goal-page-edit-button-back' %>
+          <%= f.submit t('buttons.edit'), class: 'goal-page-edit-button-edit' %>
+        </div>
+        <% end %>
+   </div>
+</div>
