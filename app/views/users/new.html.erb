@@ -25,7 +25,7 @@
       <% end %>
     </div>
     <div class='user-page-new-field-date_of_birth'>
-      <%= f.date_field :date, class: 'user-page-new-field-input' %>
+      <%= f.date_field :date_of_birth, class: 'user-page-new-field-input' %>
     </div>
     <div class='user-page-new-label-joining_day'>
       <%= f.label t('attributes.joining_day') %>
@@ -60,6 +60,18 @@
     <div class='user-page-new-field-password_confirmation'>
       <%= f.text_field :password_confirmation, class: 'user-page-new-field-input' %>
     </div>
+    <div>
+    <%= f.label t('attributes.profile_photo'), class: 'user-page-new-label-profile-photo' %> 
+    <% if @user.errors[:profile_photo].any? %>
+      <span class="validation-error">
+        <%= @user.errors[:profile_photo].join(', ') %> 
+      </span>
+    <% end %>
+    </div>
+    <div>
+      <%= f.file_field :profile_photo, class: 'user-page-new-field-input' %>
+    </div>
+  <div>
     <div class='user-page-new-button'>
       <%= link_to t('buttons.back'), new_user_session_path, class: 'user-page-new-button-back' %>
       <%= f.submit t('buttons.create_user'), class: 'user-page-new-button-create' %>
